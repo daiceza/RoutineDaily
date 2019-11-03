@@ -25,4 +25,8 @@ class ProfileController extends Controller
     {
         return redirect('admin/profile/edit');
     }
+    public function index()
+    {
+        return view('admin.list');
+    }
 }

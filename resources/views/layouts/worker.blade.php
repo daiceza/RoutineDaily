@@ -34,8 +34,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!--左側-->
                         <ul class="navbar-nav mr-auto">
-                            <li><a href="/worker/users">日報確認</a></li>
-                            <li><a href="/worker/daily">日報記入</a></li>
+                            <li><a href="/worker/daily">日報確認</a></li>
                             <li><a href="/worker/routine">仕事リスト</a></li>
                             <li><a href="/worker/list">従業員リスト</a></li>
                         </ul>

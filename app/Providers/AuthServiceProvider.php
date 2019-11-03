@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //'admin'ゲートを定義
+        // ユーザーIDが 1 / 2 / 3 のユーザーを管理者とする
+        Gate::define('admin',function($user){
+            return($user->id==1 || $user->id == 2 || $user->id==3);
+        });
     }
 }
