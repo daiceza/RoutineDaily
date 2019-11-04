@@ -15,7 +15,11 @@ class CreateDailyTable extends Migration
     {
         Schema::create('daily', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('date');
+            $table->date('day');
+            $table->time('jobstart');
+            $table->time('jobend');
+            $table->time('breakstart');
+            $table->time('breakend');
             $table->string('body');
             $table->timestamps();
         });

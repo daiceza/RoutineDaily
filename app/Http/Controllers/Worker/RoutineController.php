@@ -34,14 +34,25 @@ class RoutineController extends Controller
     }
     public function edit(Request $request)
     {
-        return view('worker.routine.edit');
+        $routine = Routine::find($request->id);
+        if(empty($routine)){
+            abort(404);
+        }
+        return view('worker.routine.edit',['routine_form'=>$routine]);
     }
     public function update(Request $request)
     {
-        return redirect('worker/routine/edit');
+        $this->validate($request,Routine::$rules);
+        $routine = Routine::find($request->id);
+        $routine_form =$request->all();
+        unset($routine_form['_token']);
+        $routine->fill($routine_form)->save();
+        return redirect('worker/routine/');
     }
     public function delete(Request $request)
     {
+        $routine = Routine::find($request->id);
+        $routine->delete();
         return redirect('worker/routine/');
     }
 }

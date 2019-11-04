@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <h2>日報作成</h2>
-                <form action="{{ action('Worker\DailyController@create')}}"
+                <form action="{{ action('Worker\DailyController@update')}}"
                 method="post" enctype="multipart/form-data">
                     @if(count($errors) > 0)
                         <ul>
@@ -17,57 +17,46 @@
                     <div class="form-group row">
                         <label class="col-md-2">日付</label>
                         <div class="col-md-4">
-                            <input type="date" class="form-control" name="day" value="<?php echo date('Y-m-d');?>">
+                            <input type="date" class="form-control" name="day" value="{{ $daily_form->day}}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">勤務時間</label>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="jobstart"
-                            value="{{ !is_null($latest) ? $latest->jobstart : '09:00'}}">
+                            value="{{ $daily_form->jobstart}}">
                         </div>
                         <div class="col-md-1">
                             <a>～</a>
                         </div>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="jobend"
-                            value="{{ !is_null($latest) ? $latest->jobend : '18:00'}}">
+                            value="{{ $daily_form->jobend}}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">休憩時間</label>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="breakstart"
-                            value="{{ !is_null($latest) ? $latest->breakstart : '12:00'}}">
+                            value="{{ $daily_form->breakstart}}">
                         </div>
                         <div class="col-md-1">
                             <a>～</a>
                         </div>
                         <div class="col-md-2">    
                             <input type="time" class="form-control" name="breakend"
-                            value="{{ !is_null($latest) ? $latest->breakend : '13:00'}}">
+                            value="{{ $daily_form->breakend}}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        @if(!is_null($latest))
                         <label class="col-md-2">仕事内容</label>
                             <div class="col-md-4">
-                            <textarea class="form-control" name="body" rows="9">{{$latest->body}}</textarea>
+                            <textarea class="form-control" name="body" rows="9">{{$daily_form->body}}</textarea>
                             </div>
                         <label class="col-md-2">先日の仕事<br>{{ $latest->day}}</label>
                             <div class="col-md-4">
-                            <textarea readonly class="form-control" rows="9">{{$latest->body}}</textarea>
+                            <textarea readonly class="form-control" rows="9">{{ $latest->body}}</textarea>
                             </div>
-                        @else
-                        <label class="col-md-2">仕事内容</label>
-                            <div class="col-md-4">
-                            <textarea class="form-control" name="body" rows="9"></textarea>
-                            </div>
-                        <label class="col-md-2">テンプレート</label>
-                            <div class="col-md-4">
-                            <a>@for ($i = 9; $i < 18; $i++)@if($i!=12){{$i}}:00~{{$i+1}}:00 仕事A 1セット 仕事B 15分<br>@else {{$i}}:00~{{$i+1}}:00 休憩<br> @endif @endfor</a>
-                            </div>
-                        @endif
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">仕事リスト</label>
@@ -79,6 +68,7 @@
                             </a>
                         </div>
                     </div>
+                    <input type="hidden" name="id" value="{{ $daily_form->id }}">
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

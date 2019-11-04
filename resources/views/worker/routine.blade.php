@@ -28,10 +28,10 @@
                                 <td>{{ \Str::limit($routine->body, 200) }}</td>
                                 <td>
                                     <div>
-                                        <a>編集</a>
+                                        <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}">編集</a>
                                     </div>
                                     <div>
-                                        <a>削除</a>
+                                        <a href="{{action('Worker\RoutineController@delete',['id' => $routine->id])}}">削除</a>
                                     </div>
                                 </td>
                             </tr>

@@ -29,15 +29,18 @@ Route::group(['prefix' => 'worker'],function(){
     Route::get('daily','Worker\DailyController@daily');
     Route::get('routine','Worker\RoutineController@routine');
     Route::get('list','Worker\ListController@list');
-    
+    //仕事リスト編集
     Route::get('routine/create','Worker\RoutineController@add');
     Route::post('routine/create','Worker\RoutineController@create');
     Route::get('routine/edit','Worker\RoutineController@edit');
     Route::post('routine/edit','Worker\RoutineController@update');
-    Route::post('routine/','worker\RoutineController@delete');
-    
+    Route::post('routine/delete','Worker\RoutineController@delete');
+    //日報編集
     Route::get('daily/create','Worker\DailyController@add');
-    Route::post('daily/create','worker\DailyController@create');
+    Route::post('daily/create','Worker\DailyController@create');
+    Route::get('daily/edit','Worker\DailyController@edit');
+    Route::post('daily/edit','Worker\DailyController@update');
+    Route::get('daily/delete','Worker\DailyController@delete');
     
 });
 //ログイン

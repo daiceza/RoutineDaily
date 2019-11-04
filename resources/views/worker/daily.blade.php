@@ -17,14 +17,25 @@
                         <thead>
                             <tr>
                                 <td width="10%">日付</td>
-                                <td width="70%">詳細</td>
+                                <td width="70%">仕事内容</td>
+                                <td width="10%">操作</td>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($posts as $daily)
                             <tr>
-                                <td>{{ \Str::limit('2019/11/03', 10) }}</td>
-                                <td>{{ \Str::limit('午前中: 午後:', 150) }}</td>
+                                <td>{{ \Str::limit($daily->day, 10) }}</td>
+                                <td>{{ \Str::limit($daily->body, 150) }}</td>
+                                <td>
+                                    <div>
+                                        <a href="{{action('Worker\DailyController@edit',['id' => $daily->id])}}">編集</a>
+                                    </div>
+                                    <div>
+                                        <a href="{{action('Worker\DailyController@delete',['id' => $daily->id])}}">削除</a>
+                                    </div>
+                                </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
