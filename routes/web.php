@@ -16,19 +16,19 @@ Route::get('/', function () {
 });
 //管理者
 Route::group(['prefix' => 'admin'],function(){
-    Route::get('profile/create','Admin\ProfileController@add');
-    Route::post('profile/create','Admin\ProfileController@create');
-    Route::get('profile/edit','Admin\ProfileController@edit');
-    Route::post('profile/edit','Admin\ProfileController@update');
-    Route::get('profile/delete','Admin\ProfileController@delete');
-    Route::get('profile','Admin\ProfileController@index');
+    Route::get('employee/create','Admin\EmployeeController@add');
+    Route::post('employee/create','Admin\EmployeeController@create');
+    Route::get('employee/edit','Admin\EmployeeController@edit');
+    Route::post('employee/edit','Admin\EmployeeController@update');
+    Route::get('employee/delete','Admin\EmployeeController@delete');
+    Route::get('employee','Admin\EmployeeController@employee');
 });
 //ページ移動
 Route::group(['prefix' => 'worker'],function(){
     Route::get('users','Worker\UsersController@users');
     Route::get('daily','Worker\DailyController@daily');
     Route::get('routine','Worker\RoutineController@routine');
-    Route::get('list','Worker\ListController@list');
+    Route::get('employee','Worker\EmployeeController@employee');
     //仕事リスト編集
     Route::get('routine/create','Worker\RoutineController@add');
     Route::post('routine/create','Worker\RoutineController@create');

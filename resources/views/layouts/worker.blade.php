@@ -33,7 +33,7 @@
                         <ul class="navbar-nav mr-auto">
                             <li><a href="/worker/daily">日報確認</a></li>
                             <li><a href="/worker/routine">仕事リスト</a></li>
-                            <li><a href="/worker/list">従業員リスト</a></li>
+                            <li><a href="/worker/employee">従業員リスト</a></li>
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">

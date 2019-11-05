@@ -8,4 +8,5 @@ return [
     'Name' => '名前',
     'employee number' => '社員番号',
     'Register' =>'登録',
+    'Confirm Password' => 'パスワード再入力',
 ];
