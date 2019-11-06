@@ -17,7 +17,9 @@
                         <thead>
                             <tr>
                                 <th width="20%">仕事名</th>
-                                <th width="60%">詳細</th>
+                                <th width="15%">目安時間</th>
+                                <th width="25%">内容</th>
+                                <th width="20%">重要度</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
@@ -25,7 +27,9 @@
                             @foreach($posts as $routine)
                             <tr>
                                 <th>{{ \Str::limit($routine->jobname, 100) }}</th>
-                                <td>{{ \Str::limit($routine->body, 200) }}</td>
+                                <td>{{ \Str::limit($routine->content, 200) }}</td>
+                                <td>{{ \Str::limit($routine->content, 200) }}</td>
+                                <td>{{ \Str::limit($routine->content, 200) }}</td>
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}">編集</a>

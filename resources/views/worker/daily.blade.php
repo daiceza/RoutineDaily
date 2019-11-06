@@ -17,7 +17,8 @@
                         <thead>
                             <tr>
                                 <td width="10%">日付</td>
-                                <td width="70%">仕事内容</td>
+                                <td width="50%">仕事内容</td>
+                                <td width="20%">所感</td>
                                 <td width="10%">操作</td>
                             </tr>
                         </thead>
@@ -25,7 +26,8 @@
                             @foreach($posts as $daily)
                             <tr>
                                 <td>{{ \Str::limit($daily->day, 10) }}</td>
-                                <td>{{ \Str::limit($daily->body, 150) }}</td>
+                                <td>{{ \Str::limit($daily->timetable, 150) }}</td>
+                                <td>{{ \Str::limit($daily->impress, 150) }}</td>
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\DailyController@edit',['id' => $daily->id])}}">編集</a>

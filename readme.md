@@ -14,7 +14,7 @@
 
 ## <font color="Orange">従業員管理(Admin)</font>
 ### 従業員編集
-- 名前
+- 名前(name)
 - 4桁の従業員番号(employee)
 - メールアドレス(email)
 - パスワード(Adminは不要)
@@ -45,8 +45,8 @@
 - 重要度(important)
 
 ### 従業員リスト
-- 名前
-- 所属(役職・部署)
+- 名前(name)
+- 所属(team)役職・部署
 - 入社年月(join)
 - 仕事内容テーブル.仕事名を表示
 
@@ -55,7 +55,7 @@
 
 ## <font color="red">テーブル</font>
 ### users(従業員テーブル・ユーザー認証用)
-- 名前
+- 名前(name)
 - 4桁の従業員番号(employee)
 - メールアドレス(email)
 - パスワード(Adminは不要)
@@ -88,3 +88,4 @@
 
 #### <font color="tomato">更新内容</font>
 11/05 テーブルとビューの構成を整理
+11/06 workerのview編集

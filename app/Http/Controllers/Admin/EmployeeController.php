@@ -19,4 +19,12 @@ class EmployeeController extends Controller
     {
         return view('admin.employee.create');
     }
+    public function edit(Request $request)
+    {
+        return view('admin.employee.edit');
+    }
+    public function update(Request $request)
+    {
+        return view('admin/employee');
+    }
 }

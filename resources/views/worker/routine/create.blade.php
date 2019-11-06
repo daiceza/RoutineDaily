@@ -22,9 +22,31 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">詳細</label>
+                        <label class="col-md-2">単位</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="set" value="{{old('set','1セット')}}">
+                        </div>
+                        <label class="col-md-2">目安時間</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="settime" value="{{old('settime')}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">内容</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="7">{{ old('body')}}</textarea>
+                            <textarea class="form-control" name="content" rows="7">{{ old('content')}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">マニュアル</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="manual" rows="7">{{ old('manual')}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">重要度</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="important" value="{{old('important')}}">
                         </div>
                     </div>
                     {{ csrf_field() }}

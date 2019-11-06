@@ -52,16 +52,16 @@
                         @if(!is_null($latest))
                         <label class="col-md-2">仕事内容</label>
                             <div class="col-md-4">
-                            <textarea class="form-control" name="body" rows="9">{{$latest->body}}</textarea>
+                            <textarea class="form-control" name="timetable" rows="9">{{$latest->timetable}}</textarea>
                             </div>
                         <label class="col-md-2">先日の仕事<br>{{ $latest->day}}</label>
                             <div class="col-md-4">
-                            <textarea readonly class="form-control" rows="9">{{$latest->body}}</textarea>
+                            <textarea readonly class="form-control" rows="9">{{$latest->timetable}}</textarea>
                             </div>
                         @else
                         <label class="col-md-2">仕事内容</label>
                             <div class="col-md-4">
-                            <textarea class="form-control" name="body" rows="9"></textarea>
+                            <textarea class="form-control" name="timetable" rows="9"></textarea>
                             </div>
                         <label class="col-md-2">テンプレート</label>
                             <div class="col-md-4">
@@ -79,6 +79,13 @@
                             </a>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">所感</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" name="impress" rows="3">{{ !is_null($latest) ? $latest->impress : ''}}</textarea>
+                        </div>
+                    </div>
+                        
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

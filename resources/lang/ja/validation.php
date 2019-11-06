@@ -146,7 +146,21 @@ return [
     */
 
     'attributes' => [
+        'day'=>'日付',
+        'timetable'=>'仕事内容',
+        'jobstart'=>'出勤時間',
+        'jobend'=>'退勤時間',
+        'breakstart'=>'休憩開始時間',
+        'breakend'=>'休憩終了時間',
+        
         'jobname'=> '仕事名',
-        'body'=>'詳細'
+        'settime'=> '目安時間',
+        'content'=> '内容',
+        'important'=> '重要度',
+        
+        'name'=> '名前',
+        'team'=> '所属',
+        'join'=> '入社年月',
+        
         ],
 ];
