@@ -66,7 +66,7 @@ class DailyController extends Controller
         
         unset($daily_form['_token']);
         $daily->fill($daily_form)->save();
-        return redirect('worker/daily/edit');
+        return redirect('worker/daily/');
     }
     public function delete(Request $request){
         $daily = Daily::find($request->id);

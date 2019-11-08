@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Illuminate\Database\Eloquent\Model;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -36,4 +38,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //モデル?
+    protected $guarded = array('id');
+    protected $table = 'users';
+    public static $rules =array(
+        'name' => 'required',
+        //'employee' => 'required',
+        //'email' => 'required',
+        //'email_verified_at' => 'required',
+        //'password' => 'required',
+        'team' => 'required',
+        'join' => 'required',
+        
+        );
+    
 }

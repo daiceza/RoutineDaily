@@ -22,9 +22,31 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">詳細</label>
+                        <label class="col-md-2">単位</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="set" value="{{$routine_form->set}}">
+                        </div>
+                        <label class="col-md-2">目安時間</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="settime" value="{{$routine_form->settime}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">内容</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="content" rows="7">{{ $routine_form->content }}</textarea>
+                            <textarea class="form-control" name="content" rows="7">{{ $routine_form->content}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">マニュアル</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="manual" rows="7">{{ $routine_form->manual}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">重要度</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="important" value="{{$routine_form->important}}">
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $routine_form->id}}">

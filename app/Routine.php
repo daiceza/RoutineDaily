@@ -10,6 +10,7 @@ class Routine extends Model
     protected $table = 'routine';
     public static $rules = array(
         'jobname' => 'required',
-        'body' => 'required',
+        'settime' => 'required',
+        'content' => 'required',
     );
 }

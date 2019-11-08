@@ -24,8 +24,8 @@
                             @foreach($posts as $user)
                             <tr>
                                 <th>{{ \Str::limit($user->name, 20) }}</th>
-                                <td>{{ \Str::limit('設備チーム', 25) }}</td>
-                                <td>{{ \Str::limit('2015/11(4年目)',20)}}</td>
+                                <td>{{ \Str::limit($user->team, 25) }}</td>
+                                <td>{{ \Str::limit($user->join,20)}}</td>
                                 <td>{{ \Str::limit('洗い物',30)}}</td>
                                 <td>詳細</td>
                             </tr>

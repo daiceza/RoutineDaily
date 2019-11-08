@@ -27,9 +27,9 @@
                             @foreach($posts as $routine)
                             <tr>
                                 <th>{{ \Str::limit($routine->jobname, 100) }}</th>
+                                <td>{{ \Str::limit($routine->settime, 200) }}</td>
                                 <td>{{ \Str::limit($routine->content, 200) }}</td>
-                                <td>{{ \Str::limit($routine->content, 200) }}</td>
-                                <td>{{ \Str::limit($routine->content, 200) }}</td>
+                                <td>{{ \Str::limit($routine->important, 200) }}</td>
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}">編集</a>

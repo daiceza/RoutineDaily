@@ -22,7 +22,7 @@ class CreateDailyTable extends Migration
             $table->time('breakstart');
             $table->time('breakend');
             $table->string('timetable');
-            $table->string('impress');->nullable();
+            $table->string('impress')->nullable();
             $table->timestamps();
         });
     }

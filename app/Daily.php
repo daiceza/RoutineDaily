@@ -15,6 +15,6 @@ class Daily extends Model
         'jobend' => 'required',
         'breakstart' => 'required',
         'breakend' => 'required',
-        'body' => 'required',
+        'timetable' => 'required',
         );
 }

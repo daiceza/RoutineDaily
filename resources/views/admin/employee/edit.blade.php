@@ -1,11 +1,11 @@
-@extends('layouts.app')
-@section('title','仕事リスト編集')
+@extends('layouts.admin')
+@section('title','従業員編集')
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>仕事リスト編集</h2>
-                <form action="{{ action('Worker\RoutineController@update') }}"
+                <h2>従業員編集</h2>
+                <form action="{{ action('Admin\EmployeeController@update') }}"
                 method="post" enctype="multipart/form-data">
                     @if(count($errors) > 0)
                         <ul>
@@ -15,19 +15,27 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">仕事名</label>
+                        <label class="col-md-2">名前</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="jobname"
-                            value="{{ $routine_form->jobname }}">
+                            <input type="text" class="form-control" name="name"
+                            value="{{ $user_form->name }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">詳細</label>
+                        <label class="col-md-2">所属</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="content" rows="7">{{ $routine_form->content }}</textarea>
+                            <input type="text" class="form-control" name="team"
+                            value="{{ $user_form->team }}">
                         </div>
                     </div>
-                    <input type="hidden" name="id" value="{{ $routine_form->id}}">
+                    <div class="form-group row">
+                        <label class="col-md-2">入社年月</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="join"
+                            value="{{ $user_form->join }}">
+                        </div>
+                    </div>
+                    <input type="hidden" name="id" value="{{ $user_form->id}}">
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

@@ -71,7 +71,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">所感</label>
                         <div class="col-md-8">
-                            <textarea class="form-control" name="impress" rows="3">{{ $daily_form->impress : ''}}</textarea>
+                            <textarea class="form-control" name="impress" rows="3">{{ $daily_form->impress}}</textarea>
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $daily_form->id }}">
