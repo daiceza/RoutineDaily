@@ -66,7 +66,7 @@
 
 ### daily(日報テーブル)
 
-- 投稿者<font color="Orange">(users_id)</font>
+- 投稿者<font color="Orange">*(users_id)*</font>
 - 日付(day)
 - 出勤時間(jobstart)
 - 退勤時間(jobend)
@@ -77,7 +77,7 @@
 
 ### routine(仕事内容テーブル)
 
-- 投稿者<font color="Orange">(users_id)</font>
+- 投稿者<font color="Orange">*(users_id)*</font>
 - 仕事名(jobname)
 - 単位(set)
 - 目安時間(settime)
@@ -89,3 +89,5 @@
 #### <font color="tomato">更新内容</font>
 11/05 テーブルとビューの構成を整理
 11/06 workerのview編集
+11/09 ログイン可能にした、自分の持っている知識を思い出せる分利用する。
+リレーショナルデータベースが使いこなせていない

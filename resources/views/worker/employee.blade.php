@@ -16,7 +16,7 @@
                                 <th width="15%">名前</th>
                                 <th width="15%">所属</th>
                                 <th width="15%">入社年</th>
-                                <th width="35%">主な仕事</th>
+                                <th width="35%">主な仕事(仮users_id)</th>
                                 <th width="10%">詳細</th>
                             </tr>
                         </thead>
@@ -26,8 +26,21 @@
                                 <th>{{ \Str::limit($user->name, 20) }}</th>
                                 <td>{{ \Str::limit($user->team, 25) }}</td>
                                 <td>{{ \Str::limit($user->join,20)}}</td>
-                                <td>{{ \Str::limit('洗い物',30)}}</td>
-                                <td>詳細</td>
+                                <td>
+                                    @foreach($routineposts as $routine)
+                                    @if($user->id ==$routine->users_id)
+                                    {{ \Str::limit($routine->jobname,30)}}
+                                    @endif
+                                    @endforeach
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="{{action('Worker\EmployeeController@daily',['id'=>$user->id])}}">日報</a>
+                                    </div>
+                                    <div>
+                                        <a href="{{action('Worker\EmployeeController@routine',['id'=>$user->id])}}">仕事</a>
+                                    </div>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

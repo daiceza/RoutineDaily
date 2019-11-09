@@ -4,10 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>日報確認</h2>
+                <h2>日報確認(従業員名)</h2>
             </div>
             <div class="col-md-4">
-                <a href="{{action('Worker\DailyController@add')}}" role="button" class="btn btn-primary">日報作成</a>
             </div>
         </div>
         <div class="row">
@@ -26,14 +25,11 @@
                             @foreach($posts as $daily)
                             <tr>
                                 <th>{{ \Str::limit($daily->day, 10) }}</th>
-                                <td><textarea class="form-control" name="impress" rows="3">{{$daily->timetable}}}</textarea></td>
+                                <td><textarea readonly class="form-control" rows="3">{{$daily->timetable }}</textarea></td>
                                 <td>{{ \Str::limit($daily->impress, 150) }}</td>
                                 <td>
                                     <div>
-                                        <a href="{{action('Worker\DailyController@edit',['id' => $daily->id])}}">編集</a>
-                                    </div>
-                                    <div>
-                                        <a href="{{action('Worker\DailyController@delete',['id' => $daily->id])}}">削除</a>
+                                        <a>詳細</a>
                                     </div>
                                 </td>
                             </tr>

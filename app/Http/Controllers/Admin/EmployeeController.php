@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\User;
+use App\Users;
 
 class EmployeeController extends Controller
 {
     //
     public function employee(Request $request)
     {
-        $posts =User::all();
+        $posts =Users::all();
         return view('admin.employee',['posts'=>$posts]);
     }
     public function add(Request $request)
@@ -21,7 +21,7 @@ class EmployeeController extends Controller
     }
     public function edit(Request $request)
     {
-        $user = User::find($request->id);
+        $user = Users::find($request->id);
         if(empty($user)){
             abort(404);
         }
@@ -29,9 +29,10 @@ class EmployeeController extends Controller
     }
     public function update(Request $request)
     {
-        $this->validate($request,User::$rules);
-        $user =User::find($request->id);
-        $user_form=$request->all();
+        $this->validate($request, Users::$rules);
+        $user = Users::find($request->id);
+        $user_form =$request->all();
+        
         unset($user_form['_token']);
         $user->fill($user_form)->save();
         return redirect('admin/employee/');

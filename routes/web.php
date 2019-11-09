@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 //管理者
-Route::group(['prefix' => 'admin'],function(){
+Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::get('employee/create','Admin\EmployeeController@add');
     Route::post('employee/create','Admin\EmployeeController@create');
     Route::get('employee/edit','Admin\EmployeeController@edit');
@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin'],function(){
     Route::get('employee','Admin\EmployeeController@employee');
 });
 //ページ移動
-Route::group(['prefix' => 'worker'],function(){
+Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
     Route::get('users','Worker\UsersController@users');
     Route::get('daily','Worker\DailyController@daily');
     Route::get('routine','Worker\RoutineController@routine');
@@ -41,6 +41,9 @@ Route::group(['prefix' => 'worker'],function(){
     Route::get('daily/edit','Worker\DailyController@edit');
     Route::post('daily/edit','Worker\DailyController@update');
     Route::get('daily/delete','Worker\DailyController@delete');
+    //従業員リスト
+    Route::get('employee/daily','Worker\EmployeeController@daily');
+    Route::get('employee/routine','Worker\EmployeeController@routine');
     
 });
 //ログイン

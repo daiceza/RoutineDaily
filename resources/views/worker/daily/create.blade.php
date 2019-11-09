@@ -85,7 +85,7 @@
                             <textarea class="form-control" name="impress" rows="3">{{ !is_null($latest) ? $latest->impress : ''}}</textarea>
                         </div>
                     </div>
-                        
+                    <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">     
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

@@ -7,18 +7,21 @@ use App\Http\Controllers\Controller;
 
 use App\Routine;
 use App\Daily;
+use App\Users;
+use Auth;
 
 class DailyController extends Controller
 {
     //
     public function daily(Request $request)
     {
-        $posts =Daily::all();
+        //$posts =Daily::all();
+        $posts =Daily::where('users_id',Auth::id())->get();
         return view('worker.daily',['posts'=>$posts]);
     }
     public function add(Request $request)
     {
-        $routineposts =Routine::all();
+        $routineposts =Routine::where('users_id',Auth::id())->get();
         
         $dailyposts=Daily::all()->sortByDesc('day');
         if(count($dailyposts)>0){
@@ -37,7 +40,7 @@ class DailyController extends Controller
         unset($form['_token']);
         $daily->fill($form)->save();
         
-        return redirect('worker/daily/create');
+        return redirect('worker/daily/');
     }
     public function edit(Request $request)
     {
@@ -46,7 +49,7 @@ class DailyController extends Controller
             abort(404);
         }
         
-        $routineposts =Routine::all();
+        $routineposts =Routine::where('users_id',Auth::id())->get();
         
         $dailyposts=Daily::all()->sortByDesc('day');
         if(count($dailyposts)>0){

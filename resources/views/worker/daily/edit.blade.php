@@ -75,6 +75,7 @@
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $daily_form->id }}">
+                    <input type="hidden" name="users_id" value="{{ $daily_form->users_id }}">
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>

@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Routine;
-
+use Auth;
 class RoutineController extends Controller
 {
     //
     public function routine(Request $request)
     {
         $posts =Routine::all();
+        $posts =Routine::where('users_id',Auth::id())->get();
         return view('worker.routine',['posts'=>$posts]);
     }
     
@@ -30,7 +31,7 @@ class RoutineController extends Controller
         unset($form['_token']);
         $routine->fill($form)->save();
         
-        return redirect('worker/routine/create');
+        return redirect('worker/routine/');
     }
     public function edit(Request $request)
     {

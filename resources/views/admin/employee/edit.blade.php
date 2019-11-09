@@ -5,8 +5,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>従業員編集</h2>
-                <form action="{{ action('Admin\EmployeeController@update') }}"
-                method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\EmployeeController@update') }}" method="post" enctype="multipart/form-data">
                     @if(count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -17,22 +16,19 @@
                     <div class="form-group row">
                         <label class="col-md-2">名前</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name"
-                            value="{{ $user_form->name }}">
+                            <input type="text" class="form-control" name="name" value="{{ $user_form->name }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">所属</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="team"
-                            value="{{ $user_form->team }}">
+                            <input type="text" class="form-control" name="team" value="{{ $user_form->team }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">入社年月</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="join"
-                            value="{{ $user_form->join }}">
+                            <input type="date" class="form-control" name="join" value="{{ $user_form->join }}">
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $user_form->id}}">
