@@ -31,8 +31,8 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!--左側-->
                         <ul class="navbar-nav mr-auto">
-                            <li><a href="employee">従業員リスト</a></li>
-                            <li><a href="config">設定(作成中)</a></li>
+                            <li><a href="/admin/employee">従業員リスト</a></li>
+                            <li><a href="/admin/config">設定(作成中)</a></li>
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">

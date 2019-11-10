@@ -9,6 +9,9 @@ class Users extends Model
     //
     protected $guarded = array('id');
     protected $table = 'users';
+    protected $dates = [
+        'join'
+        ];
     public static $rules =array(
         'name' => 'required',
         //'employee' => 'required',

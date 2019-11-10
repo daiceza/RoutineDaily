@@ -1,10 +1,10 @@
 @extends('layouts.worker')
-@section('title','日報作成')
+@section('title','日報編集')
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12 mx-auto">
-                <h2>日報作成</h2>
+                <h2>日報編集</h2>
                 <form action="{{ action('Worker\DailyController@update')}}"
                 method="post" enctype="multipart/form-data">
                     @if(count($errors) > 0)

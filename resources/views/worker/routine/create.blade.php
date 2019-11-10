@@ -46,7 +46,14 @@
                     <div class="form-group row">
                         <label class="col-md-2">重要度</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" name="important" value="{{old('important')}}">
+                            <select name="important">
+                                <option value="毎日" selected>毎日</option>
+                                <option value="週2~3回">週2~3回</option>
+                                <option value="週1回">週1回</option>
+                                <option value="月1回">月1回</option>
+                                <option value="ほぼやらない">ほぼやらない</option>
+                            </select>
+                            <!--<input type="text" class="form-control" name="important" value="{{old('important')}}">-->
                         </div>
                     </div>
                     <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">

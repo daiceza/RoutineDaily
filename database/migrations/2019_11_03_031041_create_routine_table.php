@@ -16,6 +16,7 @@ class CreateRoutineTable extends Migration
         Schema::create('routine', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('users_id');
+            //$table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('jobname');
             $table->string('set')->nullable();
             $table->string('settime')->nullable();

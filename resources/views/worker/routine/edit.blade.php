@@ -46,7 +46,14 @@
                     <div class="form-group row">
                         <label class="col-md-2">重要度</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" name="important" value="{{$routine_form->important}}">
+                            <select name="important">
+                                <option value="毎日" {{ $routine_form->important == '毎日' ? 'selected' : '' }}>毎日</option>
+                                <option value="週2~3回" {{ $routine_form->important == '週2~3回' ? 'selected' : '' }}>週2~3回</option>
+                                <option value="週1回" {{ $routine_form->important == '週1回' ? 'selected' : '' }}>週1回</option>
+                                <option value="月1回" {{ $routine_form->important == '月1回' ? 'selected' : '' }}>月1回</option>
+                                <option value="ほぼやらない" {{ $routine_form->important == 'ほぼやらない' ? 'selected' : '' }}>ほぼやらない</option>
+                            </select>
+                            <!-- <input type="text" class="form-control" name="important" value="{{$routine_form->important}}"> -->
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $routine_form->id}}">

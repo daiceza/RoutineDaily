@@ -28,7 +28,7 @@
                                 <td>{{$user->employee}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->team}}</td>
-                                <td>{{$user->join}}</td>
+                                <td>{{$user->join->format('Y年m月')}}</td>
                                 <td>
                                     <div>
                                         <a href="{{action('Admin\EmployeeController@edit',['id' => $user->id])}}">編集</a>
