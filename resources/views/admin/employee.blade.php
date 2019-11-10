@@ -13,18 +13,22 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th width="20%">名前</th>
-                                <th width="40%">所属</th>
-                                <th width="20%">入社年</th>
+                                <th width="15%">名前</th>
+                                <th width="10%">従業員番号</th>
+                                <th width="20">メールアドレス</th>
+                                <th width="20%">所属</th>
+                                <th width="15%">入社年</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $user)
                             <tr>
-                                <th>{{ \Str::limit($user->name, 20) }}</th>
-                                <td>{{ \Str::limit($user->team, 25) }}</td>
-                                <td>{{ \Str::limit($user->join, 20)}}</td>
+                                <th>{{$user->name}}</th>
+                                <td>{{$user->employee}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->team}}</td>
+                                <td>{{$user->join}}</td>
                                 <td>
                                     <div>
                                         <a href="{{action('Admin\EmployeeController@edit',['id' => $user->id])}}">編集</a>

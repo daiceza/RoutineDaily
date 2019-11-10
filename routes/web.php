@@ -22,6 +22,8 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::post('employee/edit','Admin\EmployeeController@update');
     Route::get('employee/delete','Admin\EmployeeController@delete');
     Route::get('employee','Admin\EmployeeController@employee');
+    Route::get('config','Admin\ConfigController@config');
+    Route::post('config','Admin\ConfigController@update');
 });
 //ページ移動
 Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){

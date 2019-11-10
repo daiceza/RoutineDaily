@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h2>仕事リスト(従業員名)</h2>
+            <div class="col-md-12 mx-auto">
+                <h2>仕事リスト({{$username->name}})</h2>
             </div>
         </div>
         <div class="row">
@@ -25,7 +25,7 @@
                             <tr>
                                 <th>{{ \Str::limit($routine->jobname, 100) }}</th>
                                 <td>{{ \Str::limit($routine->settime, 200) }}</td>
-                                <td>{{ \Str::limit($routine->content, 100}}</td>
+                                <td>{{ \Str::limit($routine->content, 100) }}</td>
                                 <td>{{ \Str::limit($routine->important, 200) }}</td>
                                 <td>
                                     <div>

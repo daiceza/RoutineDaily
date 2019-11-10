@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>日報確認(従業員名)</h2>
+                <h2>日報確認({{$username->name}})</h2>
             </div>
             <div class="col-md-4">
             </div>
@@ -16,22 +16,16 @@
                         <thead>
                             <tr>
                                 <th width="10%">日付</th>
-                                <th width="50%">仕事内容</th>
-                                <th width="20%">所感</th>
-                                <th width="10%">操作</th>
+                                <th width="30%">仕事内容</th>
+                                <th width="30%">所感</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $daily)
                             <tr>
-                                <th>{{ \Str::limit($daily->day, 10) }}</th>
+                                <th>{{$daily->day}}</th>
                                 <td><textarea readonly class="form-control" rows="3">{{$daily->timetable }}</textarea></td>
-                                <td>{{ \Str::limit($daily->impress, 150) }}</td>
-                                <td>
-                                    <div>
-                                        <a>詳細</a>
-                                    </div>
-                                </td>
+                                <td><textarea readonly class="form-control" rows="3">{{$daily->impress}}</textarea></td>
                             </tr>
                             @endforeach
                         </tbody>

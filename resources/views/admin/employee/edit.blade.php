@@ -20,6 +20,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2">従業員番号</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="employee" value="{{ $user_form->employee }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">メールアドレス</label>
+                        <div class="col-md-10">
+                            <input type="email" class="form-control" name="email" value="{{$user_form->email}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2">所属</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="team" value="{{ $user_form->team }}">

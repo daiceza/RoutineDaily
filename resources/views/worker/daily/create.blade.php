@@ -38,14 +38,14 @@
                         <label class="col-md-2">休憩時間</label>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="breakstart"
-                            value="{{ !is_null($latest) ? $latest->breakstart : '12:00'}}">
+                            value="{{ !is_null($latest) ? $latest->breakstart : ''}}">
                         </div>
                         <div class="col-md-1">
                             <a>～</a>
                         </div>
                         <div class="col-md-2">    
                             <input type="time" class="form-control" name="breakend"
-                            value="{{ !is_null($latest) ? $latest->breakend : '13:00'}}">
+                            value="{{ !is_null($latest) ? $latest->breakend : ''}}">
                         </div>
                     </div>
                     <div class="form-group row">

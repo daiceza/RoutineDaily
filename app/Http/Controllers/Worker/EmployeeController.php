@@ -21,14 +21,14 @@ class EmployeeController extends Controller
     }
     public function daily(Request $request)
     {
-        //$posts =Daily::all();
+        $username =User::find($request->id);
         $posts =Daily::where('users_id',$request->id)->get();
-        return view('worker.employee.daily',['posts'=>$posts]);
+        return view('worker.employee.daily',['posts'=>$posts,'username'=>$username]);
     }
     public function routine(Request $request)
     {
-        //$posts =Routine::all();
+        $username =User::find($request->id);
         $posts =Routine::where('users_id',$request->id)->get();
-        return view('worker.employee.routine',['posts'=>$posts]);
+        return view('worker.employee.routine',['posts'=>$posts,'username'=>$username]);
     }
 }

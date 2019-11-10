@@ -23,7 +23,10 @@ class DailyController extends Controller
     {
         $routineposts =Routine::where('users_id',Auth::id())->get();
         
-        $dailyposts=Daily::all()->sortByDesc('day');
+        //$dailyposts=Daily::find($request->id)->sortByDesc('day');
+        //$dailyposts=Daily::all()->sortByDesc('day');
+        $dailyposts=Daily::where('users_id',Auth::id())->get();
+        
         if(count($dailyposts)>0){
             $latest =$dailyposts->shift();
         }else{
@@ -51,7 +54,9 @@ class DailyController extends Controller
         
         $routineposts =Routine::where('users_id',Auth::id())->get();
         
+        //$dailyposts=Daily::find($request->id)->sortByDesc('day');
         $dailyposts=Daily::all()->sortByDesc('day');
+        
         if(count($dailyposts)>0){
             $latest =$dailyposts->shift();
         }else{

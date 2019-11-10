@@ -16,14 +16,14 @@
                                 <th width="15%">名前</th>
                                 <th width="15%">所属</th>
                                 <th width="15%">入社年</th>
-                                <th width="35%">主な仕事(仮users_id)</th>
+                                <th width="35%">主な仕事</th>
                                 <th width="10%">詳細</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $user)
                             <tr>
-                                <th>{{ \Str::limit($user->name, 20) }}</th>
+                                <th>{{ \Str::limit($user->name, 20) }}<br>{{$user->employee}}</th>
                                 <td>{{ \Str::limit($user->team, 25) }}</td>
                                 <td>{{ \Str::limit($user->join,20)}}</td>
                                 <td>
