@@ -95,14 +95,31 @@
 リレーショナルデータベースが使いこなせていない
 
 11/10 ログイン後は/worker/dailyにリダイレクト
+
 ログアウト後は/loginにリダイレクト
 休憩時間(type=time)を空欄で送信しても?とでて保存できない
-→DB作成で->nullableにしなかった。
-migrationファイルを編集した→php artisan migration:fresh でテーブルを作り直した
-<a href="/admin">と<a href="admin">はリダイレクト先が違う(相対パス)
+
+→DB作成で->nullable;にしなかった。
+
+migrationファイルを編集した
+→php artisan migration:fresh でテーブルを作り直した
+
+重要度をプルダウン(毎日,週2~3回,週1回,月1回,ほぼやらない)設定画面から設定をデータベースにいれなくても良いと考えている。
+```
+<option value="毎日" {{ $routine_form->important == '毎日' ? 'selected' : '' }}>毎日</option>
+<option value="週2~3回" {{ $routine_form->important == '週2~3回' ? 'selected' : '' }}>週2~3回</option>
+<option value="週1回" {{ $routine_form->important == '週1回' ? 'selected' : '' }}>週1回</option>
+<option value="月1回" {{ $routine_form->important == '月1回' ? 'selected' : '' }}>月1回</option>
+<option value="ほぼやらない" {{ $routine_form->important == 'ほぼやらない' ? 'selected' : '' }}>ほぼやらない</option>
+```
+```
+<a href="/admin">　<a href="admin">
+```
+はリダイレクト先が違う(相対パス)
 
 
 今後つくりたいもの 
+
 設定(ドロップダウン),検索,ソート,日報の表示数,
 管理者と一般でリダイレクト変更
 タイムテーブルの書き方
