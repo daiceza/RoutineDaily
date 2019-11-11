@@ -32,7 +32,7 @@
                         <!--左側-->
                         <ul class="navbar-nav mr-auto">
                             <li><a href="/admin/employee">従業員リスト</a></li>
-                            <li><a href="/admin/config">設定(作成中)</a></li>
+                            <li><a href="/worker/employee">一般用</a></li>
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">

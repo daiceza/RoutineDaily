@@ -25,7 +25,7 @@
                             <tr>
                                 <th>{{ \Str::limit($user->name, 20) }}<br>{{$user->employee}}</th>
                                 <td>{{ \Str::limit($user->team, 25) }}</td>
-                                <td>{{ \Str::limit($user->join->format('Y年m月'),20)}}</td>
+                                <td>{{ \Str::limit($user->join,20)}}</td>
                                 <td>
                                     @foreach($routineposts as $routine)
                                     @if($user->id ==$routine->users_id)

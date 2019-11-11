@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-12 mx-auto">
                 <h2>従業員リスト</h2>
             </div>
         </div>
@@ -28,7 +28,7 @@
                                 <td>{{$user->employee}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->team}}</td>
-                                <td>{{$user->join->format('Y年m月')}}</td>
+                                <td>{{$user->join}}</td>
                                 <td>
                                     <div>
                                         <a href="{{action('Admin\EmployeeController@edit',['id' => $user->id])}}">編集</a>

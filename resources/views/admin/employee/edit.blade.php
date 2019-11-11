@@ -40,7 +40,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">入社年月</label>
                         <div class="col-md-10">
-                            <input type="date" class="form-control" name="join" value="{{ $user_form->join->format('Y-m-d') }}">
+                            <input type="date" class="form-control" name="join" value="{{ $user_form->join}}">
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $user_form->id}}">

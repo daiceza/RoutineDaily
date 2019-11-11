@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- 社員番号(仮) -->
+                        <!-- 社員番号(仮) 
                         <div class="form-group row">
                             <label for="employee_number" class="col-md-4 col-form-label text-md-right">{{ __('messages.employee number') }}</label>
 
@@ -51,7 +51,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div>-->
                         
                         <!-- パスワード -->
                         <div class="form-group row">

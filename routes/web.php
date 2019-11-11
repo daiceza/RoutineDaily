@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
+    //return view('auth/login');
 });
 //管理者
 Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
@@ -46,6 +47,7 @@ Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
     //従業員リスト
     Route::get('employee/daily','Worker\EmployeeController@daily');
     Route::get('employee/routine','Worker\EmployeeController@routine');
+    Route::get('employee/routine/details','Worker\EmployeeController@details');
     
 });
 //ログイン

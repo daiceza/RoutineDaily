@@ -38,9 +38,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    protected $dates = [
-        'join'
-        ];
+    //protected $dates = ['join'];
     //モデル?
     protected $guarded = array('id');
     protected $table = 'users';

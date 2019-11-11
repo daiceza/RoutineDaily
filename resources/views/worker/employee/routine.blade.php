@@ -29,7 +29,7 @@
                                 <td>{{ \Str::limit($routine->important, 200) }}</td>
                                 <td>
                                     <div>
-                                        <a>詳細</a>
+                                        <a href="{{action('Worker\EmployeeController@details',['id'=> $routine->id])}}">詳細</a>
                                     </div>
                                 </td>
                             </tr>

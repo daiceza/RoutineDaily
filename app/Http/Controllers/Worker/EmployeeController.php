@@ -32,4 +32,12 @@ class EmployeeController extends Controller
         $posts =Routine::where('users_id',$request->id)->get();
         return view('worker.employee.routine',['posts'=>$posts,'username'=>$username]);
     }
+    public function details(Request $request)
+    {
+        $routine = Routine::find($request->id);
+        if(empty($routine)){
+            abort(404);
+        }
+        return view('worker.employee.routine.details',['routine_form'=>$routine]);
+    }
 }
