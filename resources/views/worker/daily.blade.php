@@ -24,7 +24,7 @@
                             @foreach($posts as $daily)
                             <tr>
                                 <th>{{$daily->day}}</th>
-                                <td><textarea readonly class="form-control" rows="3">{{$daily->timetable}}}</textarea></td>
+                                <td><textarea readonly class="form-control" rows="3">{{$daily->timetable}}</textarea></td>
                                 <td><textarea readonly class="form-control" rows="3">{{$daily->impress}}</textarea></td>
                                 <td>
                                     <div>
