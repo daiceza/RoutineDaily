@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'employee', 'email', 'password',
+        'name', 'employee', 'email', 'password','role',
     ];
 
     /**
@@ -44,7 +44,7 @@ class User extends Authenticatable
     protected $table = 'users';
     public static $rules =array(
         'name' => 'required',
-        //'employee' => 'required',
+        'employee' => 'required',
         //'email' => 'required',
         //'email_verified_at' => 'required',
         //'password' => 'required',
