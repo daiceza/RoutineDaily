@@ -16,7 +16,8 @@ Route::get('/', function () {
     //return view('auth/login');
 });
 //管理者
-Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
+Route::group(['prefix' => 'admin','middleware'=>['auth','can:admin']],function(){
+    
     Route::get('employee/create','Admin\EmployeeController@add');
     Route::post('employee/create','Admin\EmployeeController@create');
     Route::get('employee/edit','Admin\EmployeeController@edit');
@@ -26,6 +27,14 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::get('config','Admin\ConfigController@config');
     Route::post('config','Admin\ConfigController@update');
 });
+
+Route::group(['middleware' => ['auth', 'can:admin']], function () {
+  //ユーザー登録
+  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('register', 'Auth\RegisterController@register');
+});
+
+
 //ページ移動
 Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
     Route::get('users','Worker\UsersController@users');
@@ -50,11 +59,6 @@ Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
     Route::get('employee/routine/details','Worker\EmployeeController@details');
     
 });
-//ログイン
+
 Auth::routes();
-/*Route::group(['middleware'=> ['auth','can:admin']],function(){
-    Route::get('admin','BanController@user');
-});*/
-
-
 Route::get('/home', 'HomeController@index')->name('home');

@@ -34,10 +34,16 @@
                             <li><a href="/worker/daily">日報確認</a></li>
                             <li><a href="/worker/routine">仕事リスト</a></li>
                             <li><a href="/worker/employee">従業員リスト</a></li>
-                            <li><a href="/admin/employee">管理者用</a></li>
+                            @if (Auth::user()->role == 'admin')
+                            <li class="nav-item">
+                                <a href="/admin/employee">管理者ページ</a>
+                            </li>
+                            @endif
+                            
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">
+                            
                             @guest
                             <li><a class="nav-link" href="{{ route('login')}}">
                                 {{ __('messages.Login')}}</a></li>

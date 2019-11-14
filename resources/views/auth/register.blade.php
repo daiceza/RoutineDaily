@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- 社員番号(仮) -->
+                        <!-- 社員番号 -->
                         <div class="form-group row">
                             <label for="employee" class="col-md-4 col-form-label text-md-right">{{ __('messages.employee') }}</label>
 
@@ -52,6 +52,36 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <!-- 所属 
+                        <div class="form-group row">
+                            <label for="team" class="col-md-4 col-form-label text-md-right">{{ __('messages.team') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="team" type="text" class="form-control @error('team') is-invalid @enderror" name="team" value="{{ old('team') }}" required autocomplete="team">
+
+                                @error('team')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>-->
+                        <!-- 入社年 
+                        <div class="form-group row">
+                            <label for="join" class="col-md-4 col-form-label text-md-right">{{ __('messages.join') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="join" type="text" class="form-control @error('join') is-invalid @enderror" name="join" value="{{ old('join') }}" required autocomplete="join">
+
+                                @error('join')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>-->
+                        
                         
                         <!-- パスワード -->
                         <div class="form-group row">
@@ -75,7 +105,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <!-- 管理者 -->
+                        <!-- 管理者 hidden-->
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <input id="role" type="hidden" class="form-control @error('role') is-invalid @enderror" name="role" value="worker" required autocomplete="role">

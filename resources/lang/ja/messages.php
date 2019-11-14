@@ -3,7 +3,7 @@
 return [
     'Login' => 'ログイン',
     'Logout' => 'ログアウト',
-    'register' => '登録',
+    'register' => '新規登録',
     'E-Mail Address' => 'メールアドレス',
     'Password' => 'パスワード',
     'Remember Me' => 'ログイン情報を記憶する',

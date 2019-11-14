@@ -18,8 +18,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            //ログアウト
-            return redirect('/login');
+            //ログイン後
+            return redirect('/worker/routine');
         }
 
         return $next($request);
