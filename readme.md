@@ -87,6 +87,9 @@
 
 
 #### <font color="tomato">更新内容</font>
+
+11/17 日報にpaginateを実装(5件ずつ)
+
 11/16 /registerにアクセスできるのはadminのみ
 
 DatabaseSeederで複数ユーザーを登録(\App\User::create)

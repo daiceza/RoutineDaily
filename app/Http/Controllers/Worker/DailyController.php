@@ -15,8 +15,8 @@ class DailyController extends Controller
     //
     public function daily(Request $request)
     {
-        //$posts =Daily::all();
-        $posts =Daily::where('users_id',Auth::id())->get();
+        //$posts =Daily::where('users_id',Auth::id())->get();
+        $posts =Daily::where('users_id',Auth::id())->paginate(5);
         return view('worker.daily',['posts'=>$posts]);
     }
     public function add(Request $request)
