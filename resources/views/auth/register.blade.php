@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         
-                        <!-- 所属 
+                        <!-- 所属--> 
                         <div class="form-group row">
                             <label for="team" class="col-md-4 col-form-label text-md-right">{{ __('messages.team') }}</label>
 
@@ -66,13 +66,13 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>-->
-                        <!-- 入社年 
+                        </div>
+                        <!-- 入社年--> 
                         <div class="form-group row">
                             <label for="join" class="col-md-4 col-form-label text-md-right">{{ __('messages.join') }}</label>
 
                             <div class="col-md-6">
-                                <input id="join" type="text" class="form-control @error('join') is-invalid @enderror" name="join" value="{{ old('join') }}" required autocomplete="join">
+                                <input id="join" type="date" class="form-control @error('join') is-invalid @enderror" name="join" value="{{ old('join') }}" required autocomplete="join">
 
                                 @error('join')
                                     <span class="invalid-feedback" role="alert">
@@ -80,7 +80,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>-->
+                        </div>
                         
                         
                         <!-- パスワード -->

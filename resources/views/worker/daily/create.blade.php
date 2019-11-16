@@ -65,17 +65,28 @@
                             </div>
                         <label class="col-md-2">テンプレート</label>
                             <div class="col-md-4">
-                            <a>@for ($i = 9; $i < 18; $i++)@if($i!=12){{$i}}:00~{{$i+1}}:00 仕事A 1セット 仕事B 15分<br>@else {{$i}}:00~{{$i+1}}:00 休憩<br> @endif @endfor</a>
+                            <textarea readonly class="form-control" name="timetable" rows="9">9:00~10:00 掃除 15分 仕事A 3セット
+10:00~11:00 仕事A 4セット
+11:00~12:00 仕事A 4セット
+12:00~13:00 休憩
+13:00~14:00 仕事B 3セット
+14:00~15:00 仕事B 3セット
+15:00~16:00 仕事B 3セット
+16:00~17:00 仕事C 3セット
+17:00~18:00 仕事C 2セット 整理整頓 20分</textarea>
                             </div>
                         @endif
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">仕事リスト</label>
                         <div class="col-md-10">
-                            <a>
+                            <a> @if(!is_null($routineposts))
                                 @foreach($routineposts as $routine)
                                 {{$routine->jobname}}
                                 @endforeach
+                                @else
+                                仕事リストから仕事を登録しましょう。
+                                @endif
                             </a>
                         </div>
                     </div>

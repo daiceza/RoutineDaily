@@ -87,9 +87,16 @@
 
 
 #### <font color="tomato">更新内容</font>
+11/16 /registerにアクセスできるのはadminのみ
+
+DatabaseSeederで複数ユーザーを登録(\App\User::create)
+
+テンプレートをtextarea内に記載
 
 11/14 リダイレクトループ 
+
 権限(ロール)設定をする(adminとworker)
+
 ログインユーザーのみ新規登録できる。
 
 11/13 register編集　DatabaseSeederで管理人作成

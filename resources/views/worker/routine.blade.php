@@ -24,10 +24,10 @@
                         <tbody>
                             @foreach($posts as $routine)
                             <tr>
-                                <th>{{ \Str::limit($routine->jobname, 100) }}</th>
-                                <td>{{ \Str::limit($routine->settime, 200) }}</td>
-                                <td>{{ \Str::limit($routine->content, 200) }}</td>
-                                <td>{{ \Str::limit($routine->important, 200) }}</td>
+                                <th>{{$routine->jobname }}</th>
+                                <td>{{$routine->set.$routine->settime }}</td>
+                                <td>{{$routine->content }}</td>
+                                <td>{{$routine->important}}</td>
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}">編集</a>
