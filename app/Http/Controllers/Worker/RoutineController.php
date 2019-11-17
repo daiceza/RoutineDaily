@@ -12,7 +12,6 @@ class RoutineController extends Controller
     //
     public function routine(Request $request)
     {
-        $posts =Routine::all();
         $posts =Routine::where('users_id',Auth::id())->get();
         return view('worker.routine',['posts'=>$posts]);
     }

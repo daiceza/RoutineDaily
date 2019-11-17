@@ -19,16 +19,17 @@
                             <input type="text" class="form-control" name="name" value="{{ $user_form->name }}">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">従業員番号</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="employee" value="{{ $user_form->employee }}">
-                        </div>
-                    </div>
+                    
                     <div class="form-group row">
                         <label class="col-md-2">メールアドレス</label>
                         <div class="col-md-10">
                             <input type="email" class="form-control" name="email" value="{{$user_form->email}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">従業員番号</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="employee" value="{{ $user_form->employee }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -41,6 +42,20 @@
                         <label class="col-md-2">入社年月</label>
                         <div class="col-md-10">
                             <input type="date" class="form-control" name="join" value="{{ $user_form->join}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">権限</label>
+                        <div class="col-md-2 form-check radio-inline">
+                            <input type="radio" class="form-check-input" name="role" id="admin"
+                            value='admin'{{ $user_form->role == 'admin' ? 'checked' : '' }}>
+                            <label class="form-check-label" for="admin">管理者</label>
+                        </div>
+                        <div class="col-md-2 form-check radio-inline">
+                            <input type="radio" class="form-check-input" name="role" id="worker" 
+                            value='worker'{{ $user_form->role == 'worker' ? 'checked' : '' }}
+                            {{ $user_form->id == Auth::user()->id ? 'disabled' : '' }}>
+                            <label class="form-check-label" for="worker">従業員</label>
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $user_form->id}}">

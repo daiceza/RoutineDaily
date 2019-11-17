@@ -23,8 +23,7 @@ class EmployeeController extends Controller
     public function daily(Request $request)
     {
         $username =User::find($request->id);
-        //$posts =Daily::where('users_id',$request->id)->get();
-        $posts =Daily::where('users_id',$request->id)->paginate(5);
+        $posts =Daily::where('users_id',$request->id)->orderBy('day', 'desc')->paginate(5);
         return view('worker.employee.daily',['posts'=>$posts,'username'=>$username]);
     }
     public function routine(Request $request)

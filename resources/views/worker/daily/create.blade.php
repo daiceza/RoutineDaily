@@ -61,11 +61,7 @@
                         @else
                         <label class="col-md-2">仕事内容</label>
                             <div class="col-md-4">
-                            <textarea class="form-control" name="timetable" rows="9"></textarea>
-                            </div>
-                        <label class="col-md-2">テンプレート</label>
-                            <div class="col-md-4">
-                            <textarea readonly class="form-control" name="timetable" rows="9">9:00~10:00 掃除 15分 仕事A 3セット
+                            <textarea class="form-control" name="timetable" rows="9">9:00~10:00 掃除 15分 仕事A 3セット
 10:00~11:00 仕事A 4セット
 11:00~12:00 仕事A 4セット
 12:00~13:00 休憩

@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         \App\User::create([
             //管理者
-            'name'=> '小島祐樹',
-            'employee'=>'2317',
-            'email'=>'ozima@mail',
-            'password'=>bcrypt('ozima'),
+            'name'=> '管理者',
+            'employee'=>'4587',
+            'email'=>'admin@mail',
+            'password'=>bcrypt('adminadmin'),
             'role'=>'admin',
             'team'=>'人事チーム',
             'join'=>'2015/04/01',

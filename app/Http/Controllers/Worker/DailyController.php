@@ -15,17 +15,14 @@ class DailyController extends Controller
     //
     public function daily(Request $request)
     {
-        //$posts =Daily::where('users_id',Auth::id())->get();
-        $posts =Daily::where('users_id',Auth::id())->paginate(5);
+        $posts =Daily::where('users_id',Auth::id())->orderBy('day', 'desc')->paginate(5);
         return view('worker.daily',['posts'=>$posts]);
     }
     public function add(Request $request)
     {
         $routineposts =Routine::where('users_id',Auth::id())->get();
         
-        //$dailyposts=Daily::find($request->id)->sortByDesc('day');
-        //$dailyposts=Daily::all()->sortByDesc('day');
-        $dailyposts=Daily::where('users_id',Auth::id())->get();
+        $dailyposts=Daily::where('users_id',Auth::id())->orderBy('day', 'desc')->get();
         
         if(count($dailyposts)>0){
             $latest =$dailyposts->shift();

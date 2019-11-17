@@ -34,7 +34,9 @@
                                         <a href="{{action('Admin\EmployeeController@edit',['id' => $user->id])}}">編集</a>
                                     </div>
                                     <div>
+                                        @if($user->id != Auth::user()->id)
                                         <a href="{{action('Admin\EmployeeController@delete',['id' => $user->id])}}">削除</a>
+                                        @endif
                                     </div>
                                 </td>
                             </tr>
