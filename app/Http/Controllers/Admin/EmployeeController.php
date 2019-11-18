@@ -12,7 +12,12 @@ class EmployeeController extends Controller
     //
     public function employee(Request $request)
     {
-        $posts =Users::all();
+        $my_team =$request->my_team;
+        if($my_team != ''){
+            $posts = Users::where('team',$my_team)->orderBy('employee','asc')->get();
+        }else{
+            $posts = Users::orderBy('employee','asc')->get();
+        }
         return view('admin.employee',['posts'=>$posts]);
     }
     public function add(Request $request)

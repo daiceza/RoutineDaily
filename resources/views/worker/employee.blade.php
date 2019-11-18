@@ -3,8 +3,23 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-12 mx-auto">
+            <div class="col-md-4 mx-auto">
                 <h2>従業員リスト</h2>
+            </div>
+            <div class="col-md-8">
+                <form action="{{action('Worker\EmployeeController@employee')}}" method="get">
+                    <div class="form-group row">
+                        <label class="col-md-2">所属</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" name="my_team" value="{{Auth::user()->team}}"/>
+                        </div>
+                        <div class="col-md-2">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary" value="検索"/>
+                        </div>
+                    </div>
+                    
+                </form>
             </div>
         </div>
         <div class="row">

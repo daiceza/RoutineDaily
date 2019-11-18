@@ -77,9 +77,9 @@
                         <label class="col-md-2">仕事リスト</label>
                         <div class="col-md-10">
                             <a> @if(!is_null($routineposts))
-                                @foreach($routineposts as $routine)
-                                {{$routine->jobname}}
-                                @endforeach
+                                    @foreach($routineposts as $routine)
+                                    {{$routine->jobname}}
+                                    @endforeach
                                 @else
                                 仕事リストから仕事を登録しましょう。
                                 @endif

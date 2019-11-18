@@ -15,9 +15,14 @@ class EmployeeController extends Controller
     //
     public function employee(Request $request)
     {
-        $posts =User::all();
-        $routineposts=Routine::all();
-        //$routineposts=Routine::where('users_id',$request->id)->get();
+        $my_team =$request->my_team;
+        if($my_team != ''){
+            $posts = User::where('team',$my_team)->orderBy('employee','asc')->get();
+        }else{
+            $posts = User::orderBy('employee','asc')->get();
+        }
+        
+        $routineposts=Routine::where('users_id',$request->id)->get();
         return view('worker.employee',['posts'=>$posts,'routineposts'=>$routineposts]);
     }
     public function daily(Request $request)

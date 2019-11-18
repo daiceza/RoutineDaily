@@ -72,7 +72,7 @@
                             <label for="join" class="col-md-4 col-form-label text-md-right">{{ __('messages.join') }}</label>
 
                             <div class="col-md-6">
-                                <input id="join" type="date" class="form-control @error('join') is-invalid @enderror" name="join" value="{{ old('join') }}" required autocomplete="join">
+                                <input id="join" type="date" class="form-control @error('join') is-invalid @enderror" name="join" value="{{ old('join','2018-04-01') }}" required autocomplete="join">
 
                                 @error('join')
                                     <span class="invalid-feedback" role="alert">
