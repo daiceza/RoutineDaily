@@ -87,9 +87,17 @@
 
 ### 初期ログイン
 
+管理者
+
 メールアドレス admin@mail
 
 パスワード adminadmin
+
+従業員1(従業員2)
+
+メールアドレス worker1@mail(worker2@mail)
+
+パスワード workwork1(workwork2)
 
 
 #### <font color="tomato">更新内容</font>

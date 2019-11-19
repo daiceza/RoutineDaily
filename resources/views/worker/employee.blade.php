@@ -42,11 +42,13 @@
                                 <td>{{ \Str::limit($user->team, 25) }}</td>
                                 <td>{{ \Str::limit($user->join,20)}}</td>
                                 <td>
+                                    
                                     @foreach($routineposts as $routine)
                                     @if($user->id ==$routine->users_id)
                                     {{ \Str::limit($routine->jobname,30)}}
                                     @endif
                                     @endforeach
+                                    
                                 </td>
                                 <td>
                                     <div>

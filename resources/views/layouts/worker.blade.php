@@ -10,6 +10,7 @@
         <title>@yield('title')</title>
         <!-- Scripts -->
         <script src="{{ secure_asset('js/app.js') }}" defer></script>
+        <script src="{{ secure_asset('js/worker.js') }}" defer></script>
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -31,12 +32,18 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!--左側-->
                         <ul class="navbar-nav mr-auto">
-                            <li><a href="/worker/daily">日報確認</a></li>
-                            <li><a href="/worker/routine">仕事リスト</a></li>
-                            <li><a href="/worker/employee">従業員リスト</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/worker/daily">日報確認</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/worker/routine">仕事リスト</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/worker/employee">従業員リスト</a>
+                            </li>
                             @if (Auth::user()->role == 'admin')
                             <li class="nav-item">
-                                <a href="/admin/employee">管理者ページ</a>
+                                <a class="nav-link" href="/admin/employee">管理者ページ</a>
                             </li>
                             @endif
                             

@@ -31,13 +31,17 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!--左側-->
                         <ul class="navbar-nav mr-auto">
-                            <li><a href="/admin/employee">従業員リスト</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/employee">従業員リスト</a>
+                            </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
                                 </li>
                             @endif
-                            <li><a href="/worker/employee">従業員ページ</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/worker/employee">従業員ページ</a>
+                            </li>
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">

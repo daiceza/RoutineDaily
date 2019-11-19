@@ -30,10 +30,12 @@
                                 <td>{{$routine->important}}</td>
                                 <td>
                                     <div>
-                                        <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}">編集</a>
+                                        <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}"
+                                        onclick="deleteconfirm()">編集</a>
                                     </div>
                                     <div>
-                                        <a href="{{action('Worker\RoutineController@delete',['id' => $routine->id])}}">削除</a>
+                                        <a href="{{action('Worker\RoutineController@delete',['id' => $routine->id])}}"
+                                         onclick="deleteconfirm()">削除</a>
                                     </div>
                                 </td>
                             </tr>
