@@ -87,6 +87,8 @@
 
 ### 初期ログイン
 
+https://safe-depths-83996.herokuapp.com/ (11/20更新)
+
 管理者
 
 メールアドレス admin@mail
