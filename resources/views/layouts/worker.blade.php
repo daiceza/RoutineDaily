@@ -10,7 +10,7 @@
         <title>@yield('title')</title>
         <!-- Scripts -->
         <script src="{{ secure_asset('js/app.js') }}" defer></script>
-        <script src="{{ secure_asset('js/worker.js') }}" defer></script>
+        
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -82,5 +82,7 @@
                 @yield('content')
             </main>
         </div>
+        <!-- Scripts -->
+        <script src="{{ secure_asset('js/worker.js') }}"></script>
     </body>
 </html>

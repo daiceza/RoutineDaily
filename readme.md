@@ -102,6 +102,8 @@
 
 #### <font color="tomato">更新内容</font>
 
+11/19・20 jQueryが使えない
+
 11/18 所属で検索可能 従業員番号の昇順をControllerで初期設定
 
 11/17 日報にpaginateを実装(5件ずつ)
