@@ -39,12 +39,13 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
                                 </li>
                             @endif
-                            <li class="nav-item">
-                                <a class="nav-link" href="/worker/employee">従業員ページ</a>
-                            </li>
+                            
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/worker/employee">従業員ページ</a>
+                            </li>
                             @guest
                             <li><a class="nav-link" href="{{ route('login')}}">
                                 {{ __('messages.Login')}}</a></li>

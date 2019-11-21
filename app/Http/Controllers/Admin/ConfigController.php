@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace RoutineDaily\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use RoutineDaily\Http\Controllers\Controller;
 
 class ConfigController extends Controller
 {

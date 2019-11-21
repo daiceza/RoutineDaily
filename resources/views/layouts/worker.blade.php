@@ -41,15 +41,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/worker/employee">従業員リスト</a>
                             </li>
+                        </ul>
+                        <!--右側-->
+                        <ul class="navbar-nav ml-auto">
                             @if (Auth::user()->role == 'admin')
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin/employee">管理者ページ</a>
                             </li>
                             @endif
-                            
-                        </ul>
-                        <!--右側-->
-                        <ul class="navbar-nav ml-auto">
                             
                             @guest
                             <li><a class="nav-link" href="{{ route('login')}}">
@@ -83,6 +82,7 @@
             </main>
         </div>
         <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="{{ secure_asset('js/worker.js') }}"></script>
     </body>
 </html>

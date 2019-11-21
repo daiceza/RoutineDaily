@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace RoutineDaily;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,10 +22,10 @@ class Users extends Model
         );
     public function daily()
     {
-        return $this->hasmany('App\Daily');
+        return $this->hasmany('RoutineDaily\Daily');
     }
     public function routine()
     {
-        return $this->hasmany('App\Routine');
+        return $this->hasmany('RoutineDaily\Routine');
     }
 }

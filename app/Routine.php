@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace RoutineDaily;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +16,6 @@ class Routine extends Model
     );
     public function users()
     {
-        return $this->belongsTo('App\Users','foreign_key');
+        return $this->belongsTo('RoutineDaily\Users','foreign_key');
     }
 }

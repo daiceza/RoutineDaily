@@ -1,6 +1,3 @@
-(function($, window) {
-  $(function(){
-    $('h2').css({'color': 'red'});
-    //deleteconfirm()confirm("削除しますか?");
-  });
-})(jQuery, window);
+function deleteconfirm() {
+  confirm("本当に消しますか?");
+}

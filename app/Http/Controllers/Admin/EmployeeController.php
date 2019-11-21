@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace RoutineDaily\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use RoutineDaily\Http\Controllers\Controller;
 
-use App\Users;
+use RoutineDaily\Users;
 use Carbon\carbon;
 class EmployeeController extends Controller
 {
@@ -13,9 +13,11 @@ class EmployeeController extends Controller
     public function employee(Request $request)
     {
         $my_team =$request->my_team;
+        //所属検索
         if($my_team != ''){
             $posts = Users::where('team',$my_team)->orderBy('employee','asc')->get();
         }else{
+            //従業員番号でソート
             $posts = Users::orderBy('employee','asc')->get();
         }
         return view('admin.employee',['posts'=>$posts]);

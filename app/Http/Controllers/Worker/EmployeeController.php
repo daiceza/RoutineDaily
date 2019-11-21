@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Worker;
+namespace RoutineDaily\Http\Controllers\Worker;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use RoutineDaily\Http\Controllers\Controller;
 
-use App\User;
-use App\Daily;
-use App\Routine;
+use RoutineDaily\User;
+use RoutineDaily\Daily;
+use RoutineDaily\Routine;
 use Carbon\Carbon;
 
 class EmployeeController extends Controller

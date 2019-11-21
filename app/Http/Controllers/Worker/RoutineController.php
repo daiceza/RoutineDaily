@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Worker;
+namespace RoutineDaily\Http\Controllers\Worker;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use RoutineDaily\Http\Controllers\Controller;
 
-use App\Routine;
+use RoutineDaily\Routine;
 use Auth;
 class RoutineController extends Controller
 {

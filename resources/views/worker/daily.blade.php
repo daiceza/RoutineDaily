@@ -23,7 +23,17 @@
                         <tbody>
                             @foreach($posts as $daily)
                             <tr>
-                                <th>{{$daily->day}}</th>
+                                <th>
+                                    @if($daily->day>date('Y-m-d'))
+                                    <font size="+1">{{$daily->day}}
+                                    <br><font color="orangered">(予定)</font></font>
+                                    @elseif($daily->day==date('Y-m-d'))
+                                    <font size="+1">{{$daily->day}}
+                                    <br><font color="green">(今日)</font></font>
+                                    @else
+                                    {{$daily->day}}
+                                    @endif
+                                </th>
                                 <td><textarea readonly class="form-control" rows="9">{{$daily->timetable}}</textarea></td>
                                 <td><textarea readonly class="form-control" rows="9">{{$daily->impress}}</textarea></td>
                                 <td>

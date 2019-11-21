@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace RoutineDaily;
 
 use Illuminate\Database\Eloquent\Model;
 
