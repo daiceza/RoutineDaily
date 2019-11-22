@@ -46,7 +46,7 @@
                         <ul class="navbar-nav ml-auto">
                             @if (Auth::user()->role == 'admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="/admin/employee">管理者ページ</a>
+                                <a class="nav-link" href="/admin/employee"><b>管理者ページへ</b></a>
                             </li>
                             @endif
                             

@@ -30,12 +30,11 @@
                                 <td>{{$routine->important}}</td>
                                 <td>
                                     <div>
-                                        <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}"
-                                        onclick="deleteconfirm()">編集</a>
+                                        <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}">編集</a>
                                     </div>
-                                    <div>
+                                    <div><!--onClick="return confirm('削除しますか?')"で確認する、JavaScriptを読み込みたい-->
                                         <a href="{{action('Worker\RoutineController@delete',['id' => $routine->id])}}"
-                                         onclick="deleteconfirm()">削除</a>
+                                         onClick="return confirm('削除しますか?')">削除</a>
                                     </div>
                                 </td>
                             </tr>

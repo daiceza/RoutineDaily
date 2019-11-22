@@ -44,7 +44,7 @@
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="/worker/employee">従業員ページ</a>
+                                <a class="nav-link" href="/worker/employee"><b>従業員ページへ</b></a>
                             </li>
                             @guest
                             <li><a class="nav-link" href="{{ route('login')}}">
