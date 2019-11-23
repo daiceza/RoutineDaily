@@ -12,10 +12,10 @@ class Users extends Model
     //protected $dates = ['join'];
     public static $rules =array(
         'name' => 'required',
-        //'employee' => 'required',
-        //'email' => 'required',
+        'employee' => 'required',
+        'email' => 'required',
         //'email_verified_at' => 'required',
-        //'password' => 'required',
+        'password' => 'required',
         'team' => 'required',
         'join' => 'required',
         

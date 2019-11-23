@@ -24,10 +24,12 @@ class EmployeeController extends Controller
     }
     public function add(Request $request)
     {
+        //registerがあるので未実装
         return view('admin.employee.create');
     }
     public function edit(Request $request)
     {
+        //編集
         $user = Users::find($request->id);
         if(empty($user)){
             abort(404);
@@ -36,6 +38,7 @@ class EmployeeController extends Controller
     }
     public function update(Request $request)
     {
+        //更新
         $this->validate($request, Users::$rules);
         $user = Users::find($request->id);
         $user_form =$request->all();

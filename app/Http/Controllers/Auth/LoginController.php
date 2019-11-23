@@ -26,8 +26,8 @@ class LoginController extends Controller
      * @var string
      */
     //protected $redirectTo = '/home';
-    //ログイン後、仕事画面へ
-    protected $redirectTo ='/worker/routine';
+    //ログイン後、日報画面へ
+    protected $redirectTo ='/worker/daily';
 
     /**
      * Create a new controller instance.

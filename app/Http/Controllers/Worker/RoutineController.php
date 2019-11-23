@@ -42,6 +42,7 @@ class RoutineController extends Controller
     }
     public function edit(Request $request)
     {
+        //編集
         $routine = Routine::find($request->id);
         if(empty($routine)){
             abort(404);
@@ -50,6 +51,7 @@ class RoutineController extends Controller
     }
     public function update(Request $request)
     {
+        //更新
         $this->validate($request,Routine::$rules);
         $routine = Routine::find($request->id);
         $routine_form =$request->all();
@@ -59,6 +61,7 @@ class RoutineController extends Controller
     }
     public function delete(Request $request)
     {
+        //削除
         $routine = Routine::find($request->id);
         $routine->delete();
         return redirect('worker/routine/');

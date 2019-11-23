@@ -8,6 +8,19 @@
                 <a href="{{action('Worker\DailyController@add')}}" role="button" class="btn btn-primary">日報作成</a>
             </div>
         </div>
+        @if(!is_null(Auth::User()->nextday))
+        <div class="row">
+            <div class="col-md-2 mx-auto">
+                <h3>次回の予定<br>({{Auth::User()->nextday}})</h3>
+            </div>
+            <div class="col-md-8 mx-auto">
+                <textarea readonly class="form-control" rows="2">{{Auth::User()->next}}</textarea>
+            </div>
+            <div class="col-md-2 mx-auto">
+                
+            </div>
+        </div>
+        @endif
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="row">
@@ -41,7 +54,8 @@
                                         <a href="{{action('Worker\DailyController@edit',['id' => $daily->id])}}">編集</a>
                                     </div>
                                     <div>
-                                        <a href="{{action('Worker\DailyController@delete',['id' => $daily->id])}}">削除</a>
+                                        <a href="{{action('Worker\DailyController@delete',['id' => $daily->id])}}"
+                                        onclick="return confirm('削除しますか?')">削除</a>
                                     </div>
                                 </td>
                             </tr>

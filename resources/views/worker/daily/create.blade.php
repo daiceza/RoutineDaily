@@ -92,7 +92,7 @@
                             <textarea class="form-control" name="impress" rows="3">{{ !is_null($latest) ? $latest->impress : ''}}</textarea>
                         </div>
                     </div>
-                    <!--次回の予定 DBはusers.table
+                    <!--次回の予定 DBはusers.table-->
                     <div class="form-group row">
                         <label class="col-md-2">次の勤務日</label>
                         <div class="col-md-4">
@@ -102,7 +102,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">次の仕事予定</label>
                         <div class="col-md-8">
-                            <textarea class="form-control" name="next" rows="3"></textarea>
+                            <textarea class="form-control" name="next" rows="3">{{Auth::user()->next}}</textarea>
                         </div>
                     </div>
                     <!-- -->
