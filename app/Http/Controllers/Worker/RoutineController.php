@@ -6,20 +6,27 @@ use Illuminate\Http\Request;
 use RoutineDaily\Http\Controllers\Controller;
 
 use RoutineDaily\Routine;
+use RoutineDaily\Users;
 use Auth;
 class RoutineController extends Controller
 {
-    //
+    //仕事リスト表示
     public function routine(Request $request)
     {
-        $posts =Routine::where('users_id',Auth::id())->get();
-        return view('worker.routine',['posts'=>$posts]);
+        //自分の仕事
+        $myposts =Routine::where('users_id',Auth::id())->get();
+        //他従業員の仕事
+        $username =Users::all();
+        $otherposts =Routine::where('users_id',"!=",Auth::id())->get();
+        
+        return view('worker.routine',
+        ['myposts'=>$myposts,'otherposts'=>$otherposts,'username'=>$username]);
     }
-    
-    public function add()
+    public function add(Request $request)
     {
-        $posts =Routine::all();
-        return view('worker.routine.create');
+        //新規作成・コピー
+        $routine = Routine::find($request->id);
+        return view('worker.routine.create',['routine_form'=>$routine]);
     }
     public function create(Request $request)
     {

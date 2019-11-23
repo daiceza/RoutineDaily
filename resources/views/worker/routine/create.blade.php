@@ -18,40 +18,42 @@
                         <label class="col-md-2">仕事名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="jobname"
-                            value="{{old('jobname')}}">
+                            value="{{(empty($routine_form)) ? old('jobname') : $routine_form->jobname }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">単位</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="set" value="{{old('set','1セット')}}">
+                            <input type="text" class="form-control" name="set" 
+                            value="{{(empty($routine_form)) ? old('set','1セット') : $routine_form->set }}">
                         </div>
                         <label class="col-md-2">目安時間</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="settime" value="{{old('settime')}}">
+                            <input type="text" class="form-control" name="settime" 
+                            value="{{(empty($routine_form)) ? old('settime') : $routine_form->settime }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">内容</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="content" rows="7">{{ old('content')}}</textarea>
+                            <textarea class="form-control" name="content" rows="7">{{(empty($routine_form)) ? old('content') : $routine_form->content}}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">マニュアル</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="manual" rows="7">{{ old('manual')}}</textarea>
+                            <textarea class="form-control" name="manual" rows="7">{{(empty($routine_form)) ? old('manual') : $routine_form->manual}}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">重要度</label>
                         <div class="col-md-3">
                             <select name="important">
-                                <option value="毎日" selected>毎日</option>
-                                <option value="週2~3回">週2~3回</option>
-                                <option value="週1回">週1回</option>
-                                <option value="月1回">月1回</option>
-                                <option value="ほぼやらない">ほぼやらない</option>
+                                <option value="毎日" {{ (empty($routine_form)) ? 'selected' : $routine_form->important == '毎日' ? 'selected' : ''}}>毎日</option>
+                                <option value="週2~3回" {{ (empty($routine_form)) ? '' :$routine_form->important == '週2~3回' ? 'selected' : '' }}>週2~3回</option>
+                                <option value="週1回" {{ (empty($routine_form)) ? '' :$routine_form->important == '週1回' ? 'selected' : '' }}>週1回</option>
+                                <option value="月1回" {{ (empty($routine_form)) ? '' :$routine_form->important == '月1回' ? 'selected' : '' }}>月1回</option>
+                                <option value="ほぼやらない" {{ (empty($routine_form)) ? '' :$routine_form->important == 'ほぼやらない' ? 'selected' : '' }}>ほぼやらない</option>
                             </select>
                             <!--<input type="text" class="form-control" name="important" value="{{old('important')}}">-->
                         </div>

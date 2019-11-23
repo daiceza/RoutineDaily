@@ -22,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $routine)
+                            @foreach($myposts as $routine)
                             <tr>
                                 <th>{{$routine->jobname }}</th>
                                 <td>{{$routine->set.$routine->settime }}</td>
@@ -36,6 +36,49 @@
                                         <a href="{{action('Worker\RoutineController@delete',['id' => $routine->id])}}"
                                          onClick="return confirm('削除しますか?')">削除</a>
                                     </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+               <h2>他の従業員の仕事</h2>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="20%">仕事名</th>
+                                <th width="15%">目安時間</th>
+                                <th width="25%">内容</th>
+                                <th width="10%">重要度</th>
+                                <th width="10%">従業員名</th>
+                                <th width="10%">コピー</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($otherposts as $routine)
+                            <tr>
+                                <th>{{$routine->jobname}}</th>
+                                <td>{{$routine->set.$routine->settime}}</td>
+                                <td>{{$routine->content}}</td>
+                                <td>{{$routine->important}}</td>
+                                <td>
+                                    @foreach($username as $name)
+                                    @if($routine->users_id==$name->id)
+                                    {{$name->name}}
+                                    @endif
+                                    @endforeach
+                                </td>
+                                <td>
+                                    <a href="{{action('Worker\RoutineController@add',['id' => $routine->id])}}">コピー</a>
                                 </td>
                             </tr>
                             @endforeach

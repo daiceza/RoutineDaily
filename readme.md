@@ -105,6 +105,10 @@ https://safe-depths-83996.herokuapp.com/ (11/20更新)
 
 #### <font color="tomato">更新内容</font>
 
+11/23 他の従業員の仕事をコピー(create.blade.php 新規作成画面と同じ画面)
+
+11/22 削除をreturn confirm()で確認
+
 11/19・20 javascript,jQueryが使えない(削除確認は後回し)
 
 11/18 所属で検索可能 従業員番号の昇順をControllerで初期設定
