@@ -38,17 +38,15 @@
                         <tbody>
                             @foreach($posts as $user)
                             <tr>
-                                <th>{{ \Str::limit($user->name, 20) }}<br>{{$user->employee}}</th>
-                                <td>{{ \Str::limit($user->team, 25) }}</td>
-                                <td>{{ \Str::limit($user->join,20)}}</td>
+                                <th>{{$user->name}}<br>{{$user->employee}}</th>
+                                <td>{{$user->team}}</td>
+                                <td>{{$user->join}}</td>
                                 <td>
-                                    
                                     @foreach($routineposts as $routine)
                                     @if($user->id ==$routine->users_id)
-                                    {{ \Str::limit($routine->jobname,30)}}
+                                    {{$routine->jobname}}
                                     @endif
                                     @endforeach
-                                    
                                 </td>
                                 <td>
                                     <div>

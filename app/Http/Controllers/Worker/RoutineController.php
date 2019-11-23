@@ -16,11 +16,12 @@ class RoutineController extends Controller
         //自分の仕事
         $myposts =Routine::where('users_id',Auth::id())->get();
         //他従業員の仕事
-        $username =Users::all();
-        $otherposts =Routine::where('users_id',"!=",Auth::id())->get();
+        $otherposts =Routine::where('users_id',"!=",Auth::id())
+        ->join('users','users.id','=','routine.users_id')
+        ->get();
         
         return view('worker.routine',
-        ['myposts'=>$myposts,'otherposts'=>$otherposts,'username'=>$username]);
+        ['myposts'=>$myposts,'otherposts'=>$otherposts]);
     }
     public function add(Request $request)
     {

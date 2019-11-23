@@ -107,6 +107,8 @@ https://safe-depths-83996.herokuapp.com/ (11/20更新)
 
 11/23 他の従業員の仕事をコピー(create.blade.php 新規作成画面と同じ画面)
 
+tableをjoinする
+
 11/22 削除をreturn confirm()で確認
 
 11/19・20 javascript,jQueryが使えない(削除確認は後回し)

@@ -92,9 +92,23 @@
                             <textarea class="form-control" name="impress" rows="3">{{ !is_null($latest) ? $latest->impress : ''}}</textarea>
                         </div>
                     </div>
+                    <!--次回の予定 DBはusers.table
+                    <div class="form-group row">
+                        <label class="col-md-2">次の勤務日</label>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control" name="nextday" value="<?php echo date('Y-m-d',strtotime('tomorrow'));?>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">次の仕事予定</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" name="next" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <!-- -->
                     <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">     
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <input type="submit" class="btn btn-primary" value="作成">
                 </form>
             </div>
         </div>

@@ -20,6 +20,7 @@ class DailyController extends Controller
     }
     public function add(Request $request)
     {
+        //日報作成画面
         $routineposts =Routine::where('users_id',Auth::id())->get();
         
         $dailyposts=Daily::where('users_id',Auth::id())->orderBy('day', 'desc')->get();

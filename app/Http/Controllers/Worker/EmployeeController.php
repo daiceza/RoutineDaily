@@ -17,9 +17,11 @@ class EmployeeController extends Controller
     {
         $my_team =$request->my_team;
         if($my_team != ''){
-            $posts = User::where('team',$my_team)->orderBy('employee','asc')->get();
+            $posts = User::where('team',$my_team)->orderBy('employee','asc')
+            ->get();
         }else{
-            $posts = User::orderBy('employee','asc')->get();
+            $posts = User::orderBy('employee','asc')
+            ->get();
         }
         
         //$routineposts=Routine::where('users_id',$request->id)->get();

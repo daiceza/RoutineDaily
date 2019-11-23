@@ -70,13 +70,8 @@
                                 <td>{{$routine->set.$routine->settime}}</td>
                                 <td>{{$routine->content}}</td>
                                 <td>{{$routine->important}}</td>
-                                <td>
-                                    @foreach($username as $name)
-                                    @if($routine->users_id==$name->id)
-                                    {{$name->name}}
-                                    @endif
-                                    @endforeach
-                                </td>
+                                <!--users.tableからnameをつなげる-->
+                                <td>{{$routine->name}}</td>
                                 <td>
                                     <a href="{{action('Worker\RoutineController@add',['id' => $routine->id])}}">コピー</a>
                                 </td>
