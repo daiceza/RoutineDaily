@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'email'=>'admin@mail',
             'password'=>bcrypt('adminadmin'),
             'role'=>'admin',
-            'team'=>'人事チーム',
+            'team'=>'人事',
             'join'=>'2015/04/01',
         ]);    
             //従業員1 id=2

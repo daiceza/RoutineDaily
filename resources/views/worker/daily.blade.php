@@ -10,15 +10,32 @@
         </div>
         @if(!is_null(Auth::User()->nextday))
         <div class="row">
-            <div class="col-md-2 mx-auto">
-                <h3>次回の予定<br>({{Auth::User()->nextday}})</h3>
+            <form action="{{ action('Worker\DailyController@next')}}"
+            method="post" enctype="multipart/form-data"
+            class="col-md-12 mx-auto">
+                @if(count($errors) > 0)
+                <ul>
+                    @foreach($errors->all() as $e)
+                    <li>{{$e}}</li>
+                    @endforeach
+                </ul>
+                @endif
+            <div class="row">
+                <div class="col-md-3 mx-auto">
+                    <h3>予定<br>({{Auth::User()->nextday}})</h3>
+                </div>
+                <div class="col-md-7 mx-auto">
+                    <textarea class="form-control" name="next" rows="2">{{Auth::User()->next}}</textarea>
+                </div>
+                <div class="col-md-2 mx-auto">
+                    <!-- -->
+                    <input type="hidden" name="id" value="{{ Auth::id()}}">     
+                    {{ csrf_field() }}
+                    <input type="submit" class="btn btn-primary" value="予定編集">
+                    <!-- -->
+                </div>
             </div>
-            <div class="col-md-8 mx-auto">
-                <textarea readonly class="form-control" rows="2">{{Auth::User()->next}}</textarea>
-            </div>
-            <div class="col-md-2 mx-auto">
-                
-            </div>
+            </form>
         </div>
         @endif
         <div class="row">

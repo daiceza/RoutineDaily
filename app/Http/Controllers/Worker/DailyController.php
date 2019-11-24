@@ -97,4 +97,13 @@ class DailyController extends Controller
         $daily->delete();
         return redirect('worker/daily');
     }
+    public function next(Request $request)
+    {
+        //$this->validate($request, Users::$rules);
+        $user = Users::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $user->fill($form)->save();
+        return redirect('worker/daily');
+    }
 }

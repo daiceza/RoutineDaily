@@ -53,6 +53,7 @@ Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
     Route::get('daily/edit','Worker\DailyController@edit');
     Route::post('daily/edit','Worker\DailyController@update');
     Route::get('daily/delete','Worker\DailyController@delete');
+    Route::post('daily','Worker\DailyController@next');
     //従業員リスト
     Route::get('employee/daily','Worker\EmployeeController@daily');
     Route::get('employee/routine','Worker\EmployeeController@routine');

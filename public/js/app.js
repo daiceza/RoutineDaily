@@ -49497,9 +49497,15 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function deleteconfirm() {
-  confirm("削除しますか?");
-});
+function confirmDelete() {
+  var checked = confirm("本当に削除しますか？");
+
+  if (checked == true) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /***/ }),
 
