@@ -83,6 +83,13 @@
         </div>
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="{{ secure_asset('js/worker.js') }}"></script>
+        <script type="text/javascript" src="{{ secure_asset('js/worker.js') }}"></script>
+        <script type="text/javascript">
+            function confirmDelete(){
+                if(!window.confirm('本当に削除しますか?')){
+                    event.preventDefault();
+                }
+            }
+        </script>
     </body>
 </html>
