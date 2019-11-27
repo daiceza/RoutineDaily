@@ -94,12 +94,8 @@
 /***/ (function(module, exports) {
 
 function confirmDelete() {
-  var checked = confirm("本当に削除しますか？");
-
-  if (checked == true) {
-    return true;
-  } else {
-    return false;
+  if (!window.confirm('本当に削除しますか?')) {
+    event.preventDefault();
   }
 }
 

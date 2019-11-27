@@ -107,6 +107,8 @@ https://safe-depths-83996.herokuapp.com/ (11/20更新)
 
 #### <font color="tomato">更新内容</font>
 
+11/27 次の勤務日(nextday)になった場合、次の仕事予定を「今日の予定」と表記
+
 11/24 次の勤務日(nextday)次の仕事予定(next)を作成
 
 11/23 他の従業員の仕事をコピー(create.blade.php 新規作成画面と同じ画面)

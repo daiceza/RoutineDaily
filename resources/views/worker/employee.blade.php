@@ -5,6 +5,9 @@
         <div class="row">
             <div class="col-md-4 mx-auto">
                 <h2>従業員リスト</h2>
+                <!-- -->
+                <a href="{{action('Worker\EmployeeController@edit',['id' => Auth::id()])}}">パスワード変更(仮)</a>
+                <!-- -->
             </div>
             <div class="col-md-8">
                 <form action="{{action('Worker\EmployeeController@employee')}}" method="get">

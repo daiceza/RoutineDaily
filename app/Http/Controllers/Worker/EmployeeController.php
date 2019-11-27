@@ -52,4 +52,16 @@ class EmployeeController extends Controller
         }
         return view('worker.employee.routine.details',['routine_form'=>$routine]);
     }
+    public function edit(Request $request)
+    {
+        $user = User::find($request->id);
+        if(empty($user)){
+            abort(404);
+        }
+        return view('worker.employee.edit',['user_form'=>$user]);
+    }
+    public function update(Request $request)
+    {
+        return redirect('worker/employee/');
+    }
 }

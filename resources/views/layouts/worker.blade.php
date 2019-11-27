@@ -82,8 +82,11 @@
             </main>
         </div>
         <!-- Scripts -->
+        @push('scripts')
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="{{ secure_asset('js/worker.js') }}"></script>
+        @endpush
+        @stack('scripts')
         <script type="text/javascript">
             function confirmDelete(){
                 if(!window.confirm('本当に削除しますか?')){

@@ -8,7 +8,7 @@
                 <a href="{{action('Worker\DailyController@add')}}" role="button" class="btn btn-primary">日報作成</a>
             </div>
         </div>
-        @if(!is_null(Auth::User()->nextday))
+        @if(!is_null(Auth::User()->nextday) && Auth::User()->nextday>=date('Y-m-d'))
         <div class="row">
             <form action="{{ action('Worker\DailyController@next')}}"
             method="post" enctype="multipart/form-data"
@@ -22,7 +22,11 @@
                 @endif
             <div class="row">
                 <div class="col-md-3 mx-auto">
-                    <h3>予定<br>({{Auth::User()->nextday}})</h3>
+                    @if(Auth::User()->nextday>date('Y-m-d'))
+                    <h3>次回の予定<br>({{Auth::User()->nextday}})</h3>
+                    @elseif(Auth::User()->nextday==date('Y-m-d'))
+                    <h3>今日の予定<br>({{Auth::User()->nextday}})</h3>
+                    @endif
                 </div>
                 <div class="col-md-7 mx-auto">
                     <textarea class="form-control" name="next" rows="2">{{Auth::User()->next}}</textarea>

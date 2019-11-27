@@ -58,6 +58,9 @@ Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
     Route::get('employee/daily','Worker\EmployeeController@daily');
     Route::get('employee/routine','Worker\EmployeeController@routine');
     Route::get('employee/routine/details','Worker\EmployeeController@details');
+    //プロフィール確認・パスワード・メールアドレス変更
+    Route::get('employee/edit','Worker\EmployeeController@edit');
+    Route::post('employee/edit','Worker\EmployeeController@update');
     
 });
 

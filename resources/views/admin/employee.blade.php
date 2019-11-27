@@ -46,12 +46,13 @@
                                 <td>{{$user->join}}</td>
                                 <td>
                                     <div>
-                                        <a href="{{action('Admin\EmployeeController@edit',['id' => $user->id])}}">編集</a>
+                                        <a href="{{action('Admin\EmployeeController@edit',['id' => $user->id])}}"
+                                        >編集</a>
                                     </div>
                                     <div>
                                         @if($user->id != Auth::id())
                                         <a href="{{action('Admin\EmployeeController@delete',['id' => $user->id])}}"
-                                        onClick="return confirm('削除しますか?')">削除</a>
+                                        onclick="return confirmDelete();">削除</a>
                                         @endif
                                     </div>
                                 </td>

@@ -49498,12 +49498,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 function confirmDelete() {
-  var checked = confirm("本当に削除しますか？");
-
-  if (checked == true) {
-    return true;
-  } else {
-    return false;
+  if (!window.confirm('本当に削除しますか?')) {
+    event.preventDefault();
   }
 }
 
@@ -49532,13 +49528,14 @@ function confirmDelete() {
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/worker.scss ***!
-  \******************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/worker.js ./resources/sass/app.scss ./resources/sass/worker.scss ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/ec2-user/environment/RoutineDaily/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/ec2-user/environment/RoutineDaily/resources/js/worker.js */"./resources/js/worker.js");
 __webpack_require__(/*! /home/ec2-user/environment/RoutineDaily/resources/sass/app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! /home/ec2-user/environment/RoutineDaily/resources/sass/worker.scss */"./resources/sass/worker.scss");
 
