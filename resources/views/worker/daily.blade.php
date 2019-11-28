@@ -8,7 +8,6 @@
                 <a href="{{action('Worker\DailyController@add')}}" role="button" class="btn btn-primary">日報作成</a>
             </div>
         </div>
-        @if(!is_null(Auth::User()->nextday) && Auth::User()->nextday>=date('Y-m-d'))
         <div class="row">
             <form action="{{ action('Worker\DailyController@next')}}"
             method="post" enctype="multipart/form-data"
@@ -23,13 +22,21 @@
             <div class="row">
                 <div class="col-md-3 mx-auto">
                     @if(Auth::User()->nextday>date('Y-m-d'))
-                    <h3>次回の予定<br>({{Auth::User()->nextday}})</h3>
+                    <h3>次回の予定</h3>
+                    <input type="date" class="form-control" name="nextday" value="{{Auth::User()->nextday}}"
+                    title="次回の勤務日の予定です">
                     @elseif(Auth::User()->nextday==date('Y-m-d'))
-                    <h3>今日の予定<br>({{Auth::User()->nextday}})</h3>
+                    <h3>今日の予定</h3>
+                    <input type="date" class="form-control" name="nextday" value="{{Auth::User()->nextday}}"
+                    title="明日以降の日付にして保存すると次回の予定になります">
+                    @else
+                    <h3>予定作成</h3>
+                    <input type="date" class="form-control" name="nextday" value="<?php echo date('Y-m-d',strtotime('tomorrow'));?>"
+                    title="予定を入れる日付を記入してください">
                     @endif
                 </div>
                 <div class="col-md-7 mx-auto">
-                    <textarea class="form-control" name="next" rows="2">{{Auth::User()->next}}</textarea>
+                    <textarea class="form-control" name="next" rows="3" title="予定を記入してください">{{ Auth::User()->nextday>=date('Y-m-d') ? Auth::User()->next : ''}}</textarea>
                 </div>
                 <div class="col-md-2 mx-auto">
                     <!-- -->
@@ -41,7 +48,6 @@
             </div>
             </form>
         </div>
-        @endif
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="row">

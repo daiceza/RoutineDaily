@@ -48,13 +48,12 @@
                     <div class="form-group row">
                     <label for="password" class="col-md-3 col-form-label">現在のパスワード</label>
                         <div class="col-md-9">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
+                            <input id="current" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" required>
+                                @error('current_password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror
+                                @enderror
                         </div>
                     </div>
                     <!-- 新パスワード -->
@@ -79,7 +78,7 @@
                     </div>
                     <input type="hidden" name="id" value="{{ $user_form->id}}">
                     {{ csrf_field() }}
-                    <!--<input type="submit" class="btn btn-primary" value="更新">-->
+                    <input type="submit" class="btn btn-primary" value="更新">
                 </form>
             </div>
         </div>

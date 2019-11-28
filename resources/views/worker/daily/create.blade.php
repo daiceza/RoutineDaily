@@ -102,7 +102,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">次の仕事予定</label>
                         <div class="col-md-8">
-                            <textarea class="form-control" name="next" rows="3">{{Auth::user()->next}}</textarea>
+                            <textarea class="form-control" name="next" rows="3">{{Auth::user()->nextday>date('Y-m-d') ? Auth::user()->next : ''}}</textarea>
                         </div>
                     </div>
                     <!-- -->
