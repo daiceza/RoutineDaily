@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends(Auth::check() ? 'layouts.admin':'layouts.app')
 @section('title','新規登録')
 @section('content')
 <div class="container">
@@ -108,7 +108,13 @@
                         <!-- 管理者 hidden-->
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="role" type="hidden" class="form-control @error('role') is-invalid @enderror" name="role" value="worker" required autocomplete="role">
+                                @guest
+                                <input id="role" type="hidden" class="form-control @error('role') is-invalid @enderror" name="role" 
+                                value="admin" required autocomplete="role">
+                                @else
+                                <input id="role" type="hidden" class="form-control @error('role') is-invalid @enderror" name="role" 
+                                value="worker" required autocomplete="role">
+                                @endguest
 
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">

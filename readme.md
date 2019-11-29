@@ -88,7 +88,7 @@
 - マニュアル(manual);
 - 重要度(important)
 
-### 初期ログイン
+### 初期ログイン(seedを利用した場合)
 
 https://safe-depths-83996.herokuapp.com/ (11/20更新)
 
@@ -106,6 +106,8 @@ https://safe-depths-83996.herokuapp.com/ (11/20更新)
 
 
 #### <font color="tomato">更新内容</font>
+
+11/29 初期状態で(データが空の時)、管理者作成を1人可能にする(register)
 
 11/28 仕事予定・仕事予定日単体で保存可能にする。次回の予定、今日の予定、予定作成の分岐。
 

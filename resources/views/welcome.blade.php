@@ -75,8 +75,11 @@
                     @auth
                         <a href="{{ url('/worker/routine') }}">RoutineList</a>
                     @else
+                        @if(!RoutineDaily\User::all()->isEmpty())
                         <a href="{{ route('login') }}">Click here!</a>
-
+                        @else
+                        <a href="{{ route('register') }}">Click here!</a>
+                        @endif
                         <!--@if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif-->

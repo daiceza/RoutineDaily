@@ -4,6 +4,7 @@ namespace RoutineDaily\Http\Controllers\Auth;
 
 use RoutineDaily\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use RoutineDaily\User;
 
 class LoginController extends Controller
 {

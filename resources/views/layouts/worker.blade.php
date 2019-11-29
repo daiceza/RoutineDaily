@@ -44,11 +44,11 @@
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">
-                            @if (Auth::user()->role == 'admin')
+                            @can('admin')
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin/employee"><b>管理者ページへ</b></a>
                             </li>
-                            @endif
+                            @endcan
                             
                             @guest
                             <li><a class="nav-link" href="{{ route('login')}}">

@@ -7,6 +7,7 @@ use RoutineDaily\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -38,8 +39,20 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('guest');
-        $this->middleware('auth');//
+        $this->middleware(function ($request, $next) {
+        //ログインしたユーザーの設定オプションを取得
+        if(User::all()->isEmpty()){
+            //初めての登録はログイン不要
+            $this->middleware('guest');
+        }elseif(Auth::user()->role=='admin'){
+            //管理者のみ新規登録可能
+            $this->middleware('auth');
+        }else{
+            abort(404);
+        }
+        return $next($request);
+        });
+        //$this->middleware('auth');
     }
 
     /**
