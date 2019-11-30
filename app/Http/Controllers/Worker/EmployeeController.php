@@ -64,11 +64,13 @@ class EmployeeController extends Controller
     }
     public function update(Request $request)
     {
-        $this->validate($request,Users::$rules);
-        $user = Users::find($request->id);
+        $this->validate($request,Users::$mailpass);
+        $user = Auth::user();
         $user_form =$request->except('password_confirmation');
+        //$user_form->password = bcrypt($request->get('password'));
         unset($user_form['_token']);
-        $routine->fill($user_form)->save();
+        $user->fill($user_form)->save();
+        
         return redirect('worker/employee/');
     }
 }

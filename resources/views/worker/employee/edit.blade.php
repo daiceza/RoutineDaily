@@ -109,7 +109,8 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- パスワード 再入力
+                         -->
+                        <!-- パスワード 再入力 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm Password') }}</label>
 

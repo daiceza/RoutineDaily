@@ -27,6 +27,10 @@ class Users extends Model
         'join' => 'required',
         
         );
+    public static $mailpass =array(
+        'email' => 'required',
+        'password' => 'required|string|min:4|confirmed',
+        );
     public function daily()
     {
         return $this->hasmany('RoutineDaily\Daily');
