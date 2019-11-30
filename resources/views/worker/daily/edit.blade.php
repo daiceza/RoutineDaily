@@ -17,21 +17,21 @@
                     <div class="form-group row">
                         <label class="col-md-2">日付</label>
                         <div class="col-md-4">
-                            <input type="date" class="form-control" name="day" value="{{ $daily_form->day}}">
+                            <input type="date" class="form-control" name="day" value="{{ $daily_form->day}}" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">勤務時間</label>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="jobstart"
-                            value="{{ $daily_form->jobstart}}">
+                            value="{{ $daily_form->jobstart}}" required>
                         </div>
                         <div class="col-md-1">
                             <a>～</a>
                         </div>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="jobend"
-                            value="{{ $daily_form->jobend}}">
+                            value="{{ $daily_form->jobend}}" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -51,7 +51,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">仕事内容</label>
                             <div class="col-md-4">
-                            <textarea class="form-control" name="timetable" rows="9">{{$daily_form->timetable}}</textarea>
+                            <textarea class="form-control" name="timetable" rows="9"  required>{{$daily_form->timetable}}</textarea>
                             </div>
                         <label class="col-md-2">先日の仕事<br>{{ $latest->day}}</label>
                             <div class="col-md-4">

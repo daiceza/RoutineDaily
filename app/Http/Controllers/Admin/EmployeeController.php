@@ -39,7 +39,7 @@ class EmployeeController extends Controller
     public function update(Request $request)
     {
         //更新
-        $this->validate($request, Users::$rules);
+        $this->validate($request, Users::$profileeditrules);
         $user = Users::find($request->id);
         $user_form =$request->all();
         

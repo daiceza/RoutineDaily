@@ -17,21 +17,21 @@
                     <div class="form-group row">
                         <label class="col-md-2">日付</label>
                         <div class="col-md-4">
-                            <input type="date" class="form-control" name="day" value="<?php echo date('Y-m-d');?>">
+                            <input type="date" class="form-control" name="day" value="<?php echo date('Y-m-d');?>" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">勤務時間</label>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="jobstart"
-                            value="{{ !is_null($latest) ? $latest->jobstart : '09:00'}}">
+                            value="{{ !is_null($latest) ? $latest->jobstart : '09:00'}}" required>
                         </div>
                         <div class="col-md-1">
                             <a>～</a>
                         </div>
                         <div class="col-md-2">
                             <input type="time" class="form-control" name="jobend"
-                            value="{{ !is_null($latest) ? $latest->jobend : '18:00'}}">
+                            value="{{ !is_null($latest) ? $latest->jobend : '18:00'}}" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -52,7 +52,7 @@
                         @if(!is_null($latest))
                         <label class="col-md-2">仕事内容</label>
                             <div class="col-md-4">
-                            <textarea class="form-control" name="timetable" rows="9">{{$latest->timetable}}</textarea>
+                            <textarea class="form-control" name="timetable" rows="9" required>{{$latest->timetable}}</textarea>
                             </div>
                         <label class="col-md-2">先日の仕事<br>{{ $latest->day}}</label>
                             <div class="col-md-4">
@@ -96,7 +96,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">次の勤務日</label>
                         <div class="col-md-4">
-                            <input type="date" class="form-control" name="nextday" value="<?php echo date('Y-m-d',strtotime('tomorrow'));?>">
+                            <input type="date" class="form-control" name="nextday" value="<?php echo date('Y-m-d',strtotime('tomorrow'));?>"  required>
                         </div>
                     </div>
                     <div class="form-group row">

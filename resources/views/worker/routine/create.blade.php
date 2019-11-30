@@ -18,7 +18,7 @@
                         <label class="col-md-2">仕事名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="jobname"
-                            value="{{(empty($routine_form)) ? old('jobname') : $routine_form->jobname }}">
+                            value="{{(empty($routine_form)) ? old('jobname') : $routine_form->jobname }}" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -36,7 +36,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">内容</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="content" rows="7">{{(empty($routine_form)) ? old('content') : $routine_form->content}}</textarea>
+                            <textarea class="form-control" name="content" rows="7" required>{{(empty($routine_form)) ? old('content') : $routine_form->content}}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">

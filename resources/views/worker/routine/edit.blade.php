@@ -18,7 +18,7 @@
                         <label class="col-md-2">仕事名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="jobname"
-                            value="{{ $routine_form->jobname }}">
+                            value="{{ $routine_form->jobname }}" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -34,7 +34,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">内容</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="content" rows="7">{{ $routine_form->content}}</textarea>
+                            <textarea class="form-control" name="content" rows="7" required>{{ $routine_form->content}}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">

@@ -9,13 +9,20 @@ class Users extends Model
     //
     protected $guarded = array('id');
     protected $table = 'users';
-    //protected $dates = ['join'];
     public static $rules =array(
         'name' => 'required',
-        'employee' => 'required',
         'email' => 'required',
         //'email_verified_at' => 'required',
+        'employee' => 'required|digits:4',
+        'team' => 'required',
+        'join' => 'required',
         'password' => 'required',
+        );
+    public static $profileeditrules =array(
+        'name' => 'required',
+        'email' => 'required',
+        'employee' => 'required|digits:4',
+        //'email_verified_at' => 'required',
         'team' => 'required',
         'join' => 'required',
         

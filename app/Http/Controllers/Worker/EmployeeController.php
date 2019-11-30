@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use RoutineDaily\Http\Controllers\Controller;
 
 use RoutineDaily\User;
+use RoutineDaily\Users;
 use RoutineDaily\Daily;
 use RoutineDaily\Routine;
 use Carbon\Carbon;
@@ -50,6 +51,7 @@ class EmployeeController extends Controller
         if(empty($routine)){
             abort(404);
         }
+        abort(404);
         return view('worker.employee.routine.details',['routine_form'=>$routine]);
     }
     public function edit(Request $request)
@@ -62,6 +64,11 @@ class EmployeeController extends Controller
     }
     public function update(Request $request)
     {
+        $this->validate($request,Users::$rules);
+        $user = Users::find($request->id);
+        $user_form =$request->except('password_confirmation');
+        unset($user_form['_token']);
+        $routine->fill($user_form)->save();
         return redirect('worker/employee/');
     }
 }

@@ -60,6 +60,10 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <!-- -->
+                                    <a class="dropdown-item" href="{{action('Worker\EmployeeController@edit',['id' => Auth::id()])}}"
+                                    >プロフィール確認</a>
+                                    <!--ログアウト-->
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

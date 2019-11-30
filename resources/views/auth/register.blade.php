@@ -24,7 +24,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- メールアドレス→社員番号 -->
+                        <!-- メールアドレス -->
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
 
