@@ -1,96 +1,11 @@
 # ルーティンワーク用日報(RoutineDaily)
 従業員が従業員同士の仕事を知りたい。
 
-## ログイン画面(login)
-- メールアドレスor4桁の従業員番号
-- パスワード
-
-## 初期登録画面(register)
-
-- 名前
-- メールアドレスor4桁の従業員番号
-- パスワード
-- パスワード再入力
-
-
-## <font color="Orange">従業員管理(Admin)</font>
-### 従業員編集
-- 名前(name)
-- 4桁の従業員番号(employee)
-- メールアドレス(email)
-- パスワード(Adminは不要)
-- 所属(役職・部署)
-- 入社年月(join)
-
-## <font color="LimeGreen">従業員(worker)</font>
-
-### 日報確認・記入(daily・仕事結果入力)
-- 日付(day)
-- 出勤時間(jobstart)
-- 退勤時間(jobend)
-- 休憩開始時間(breakstart)
-- 休憩終了時間(breakend)
-- タイムテーブル(body→timetable)
-- テンプレート・先日の仕事
-- 所感(impress)
-- ~~仕事登録(ドロップダウン)~~
-- タイムレコード(仮)
-
-
-### 仕事リスト(routine・仕事登録・5種類登録を目安に)
-- 仕事名(jobname)
-- 単位(set)
-- 目安時間(settime)
-- 内容(Content)
-- マニュアル(manual)
-- 重要度(important)
-
-### 従業員リスト
-- 名前(name)
-- 所属(team)役職・部署
-- 入社年月(join)
-- 仕事内容テーブル.仕事名を表示
-
-### 仕事結果一覧(同じ所属のみみれる?)
-- コメント
-
-## <font color="red">テーブル</font>
-### users(従業員テーブル・ユーザー認証用)
-- 名前(name)
-- 4桁の従業員番号(employee)
-- メールアドレス(email)
-- パスワード
-- 所属(役職・部署・team)
-- 入社年月(join)
-- 次の勤務日(nextday)←new
-- 次の仕事予定(next)←new
-
-### password_resets(パスワードリセット・ユーザー認証用)
-
-### daily(日報テーブル)
-
-- 投稿者<font color="Orange">*(users_id)*</font>
-- 日付(day)
-- 出勤時間(jobstart)
-- 退勤時間(jobend)
-- 休憩開始時間(breakstart)
-- 休憩終了時間(breakend)
-- タイムテーブル(body→timetable)
-- 所感(impress)
-
-### routine(仕事内容テーブル)
-
-- 投稿者<font color="Orange">*(users_id)*</font>
-- 仕事名(jobname)
-- 単位(set)
-- 目安時間(settime)
-- 内容(Content)
-- マニュアル(manual);
-- 重要度(important)
-
-### 初期ログイン(seedを利用した場合)
+## 初期ログイン(seedを利用した場合)
 
 https://safe-depths-83996.herokuapp.com/ (11/20更新)
+
+php artisan migrate:fresh --seedで管理者と従業員1,2を作成
 
 管理者
 
@@ -105,7 +20,63 @@ https://safe-depths-83996.herokuapp.com/ (11/20更新)
 パスワード workwork1(workwork2)
 
 
+## ログイン画面(login)
+- メールアドレス
+- パスワード
+
+## 新規登録画面(register)
+
+- 名前(name)
+- メールアドレス(email)
+- 社員番号(employee、4桁の数字)
+- 所属(team・役職・部署)
+- 入社年月(join)
+- パスワード(再入力あり)
+- 権限(role・ユーザーがいない場合は管理者。いる場合は従業員)
+
+
+## <font color="Orange">従業員管理(Admin)</font>
+### 従業員編集
+- 名前(name)
+- メールアドレス(email)
+- 社員番号(employee、4桁の数字)
+- 所属(team・役職・部署)
+- 入社年月(join)
+- 権限(role・管理者と従業員)
+
+## <font color="LimeGreen">従業員(worker)</font>
+
+### 日報確認・記入(daily・仕事結果入力)
+- 日付(day)
+- 出勤時間(jobstart)
+- 退勤時間(jobend)
+- 休憩開始時間(breakstart)
+- 休憩終了時間(breakend)
+- タイムテーブル(timetable)
+- テンプレート・先日の仕事(直近で昨日)
+- 所感(impress)
+- 次の勤務日(nextday)
+- 次の仕事予定(next)
+
+
+### 仕事リスト(routine・仕事登録・5種類登録を目安に)
+- 仕事名(jobname)
+- 単位(set)
+- 目安時間(settime)
+- 内容(Content)
+- マニュアル(manual)
+- 重要度(important)
+
+### 従業員リスト
+- 名前(name)
+- 社員番号(employee、4桁の数字)
+- 所属(team)役職・部署
+- 入社年月(join)
+- 主な仕事で仕事名を表示
+
 #### <font color="tomato">更新内容</font>
+
+12/1 日報作成時、すでに同じ日の日報が作成されている場合、上書きする。
 
 11/30 入力必須項目にrequiredを追加
 

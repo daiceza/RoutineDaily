@@ -26,7 +26,6 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = '/home';
     //ログイン後、日報画面へ
     protected $redirectTo ='/worker/daily';
 
@@ -41,6 +40,6 @@ class LoginController extends Controller
     }
     /*public function username()
     {
-        return 'employee_number';
+        return 'employee';
     }*/
 }

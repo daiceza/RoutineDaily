@@ -11,11 +11,12 @@
                     <div class="form-group row">
                         <label class="col-md-2">所属</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="my_team" value="{{Auth::user()->team}}"/>
+                            <input type="text" class="form-control" name="my_team" value="{{Auth::user()->team}}"
+                            title="所属を検索します、空欄で全員を表示します"/>
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="検索"/>
+                            <input type="submit" class="btn btn-primary" value="所属検索"/>
                         </div>
                     </div>
                     

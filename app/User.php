@@ -39,19 +39,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    //protected $dates = ['join'];
-    //モデル?
     protected $guarded = array('id');
     protected $table = 'users';
     public static $rules =array(
         'name' => 'required',
         'employee' => 'required',
-        //'email' => 'required',
-        //'email_verified_at' => 'required',
-        //'password' => 'required',
         'team' => 'required',
         'join' => 'required',
-        
         );
-    
 }

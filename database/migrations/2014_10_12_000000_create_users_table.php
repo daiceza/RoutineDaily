@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('role');
             $table->string('team')->nullable();
             $table->date('join')->nullable();
-            
             $table->string('next')->nullable();
             $table->date('nextday')->nullable();
             

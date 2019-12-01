@@ -29,7 +29,6 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = '/home';
     //従業員確認画面へ
     protected $redirectTo = '/worker/employee';
     /**
@@ -52,7 +51,6 @@ class RegisterController extends Controller
         }
         return $next($request);
         });
-        //$this->middleware('auth');
     }
 
     /**

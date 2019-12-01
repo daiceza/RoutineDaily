@@ -55,7 +55,6 @@
                                 <option value="月1回" {{ (empty($routine_form)) ? '' :$routine_form->important == '月1回' ? 'selected' : '' }}>月1回</option>
                                 <option value="ほぼやらない" {{ (empty($routine_form)) ? '' :$routine_form->important == 'ほぼやらない' ? 'selected' : '' }}>ほぼやらない</option>
                             </select>
-                            <!--<input type="text" class="form-control" name="important" value="{{old('important')}}">-->
                         </div>
                     </div>
                     <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
