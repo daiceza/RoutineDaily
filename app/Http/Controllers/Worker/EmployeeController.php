@@ -19,14 +19,10 @@ class EmployeeController extends Controller
         //従業員リスト
         $my_team =$request->my_team;
         if($my_team != ''){
-            $posts = User::where('team',$my_team)->orderBy('employee','asc')
-            ->get();
+            $posts = User::where('team',$my_team)->orderBy('employee','asc')->get();
         }else{
-            $posts = User::orderBy('employee','asc')
-            ->get();
+            $posts = User::orderBy('employee','asc')->get();
         }
-        
-        //$routineposts=Routine::where('users_id',$request->id)->get();
         $routineposts=Routine::all();
         return view('worker.employee',['posts'=>$posts,'routineposts'=>$routineposts]);
     }
@@ -46,12 +42,11 @@ class EmployeeController extends Controller
     }
     public function details(Request $request)
     {
-        //設定(未実装)
+        //仕事詳細
         $routine = Routine::find($request->id);
         if(empty($routine)){
             abort(404);
         }
-        abort(404);
         return view('worker.employee.routine.details',['routine_form'=>$routine]);
     }
     public function edit(Request $request)
@@ -67,7 +62,7 @@ class EmployeeController extends Controller
         $this->validate($request,Users::$mailpass);
         $user = Auth::user();
         $user_form =$request->except('password_confirmation');
-        //$user_form->password = bcrypt($request->get('password'));
+        //$user_form->password = bcrypt($request->get('new-password'));
         unset($user_form['_token']);
         $user->fill($user_form)->save();
         

@@ -8,6 +8,7 @@
                 <a href="{{action('Worker\RoutineController@add')}}" role="button" class="btn btn-primary">新規作成</a>
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="row">

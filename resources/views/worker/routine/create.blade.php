@@ -60,7 +60,7 @@
                     </div>
                     <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <input type="submit" class="btn btn-primary" value="作成">
                 </form>
             </div>
         </div>

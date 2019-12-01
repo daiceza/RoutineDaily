@@ -30,6 +30,7 @@ class Users extends Model
     public static $mailpass =array(
         'email' => 'required',
         'password' => 'required|string|min:4|confirmed',
+        'password_confirmation' => 'required',
         );
     public function daily()
     {

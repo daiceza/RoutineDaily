@@ -3,6 +3,7 @@
 namespace RoutineDaily;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Daily extends Model
 {

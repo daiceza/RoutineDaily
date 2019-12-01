@@ -8,6 +8,7 @@
                 <a href="{{action('Worker\DailyController@add')}}" role="button" class="btn btn-primary">日報作成</a>
             </div>
         </div>
+        <br>
         <div class="row">
             <form action="{{ action('Worker\DailyController@next')}}"
             method="post" enctype="multipart/form-data"

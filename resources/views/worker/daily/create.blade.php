@@ -54,7 +54,8 @@
                             <div class="col-md-4">
                             <textarea class="form-control" name="timetable" rows="9" required>{{$latest->timetable}}</textarea>
                             </div>
-                        <label class="col-md-2">先日の仕事<br>{{ $latest->day}}</label>
+                        <label class="col-md-2">先日の仕事<br>{{ $latest->day}}
+                        <br>{{date($latest->day)==date('Y-m-d',strtotime("-1 day")) ? '(昨日)':''}}</label>
                             <div class="col-md-4">
                             <textarea readonly class="form-control" rows="9">{{$latest->timetable}}</textarea>
                             </div>
@@ -76,7 +77,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">仕事リスト</label>
                         <div class="col-md-10">
-                            <a> @if(!is_null($routineposts))
+                            <a> @if(count($routineposts)>0)
                                     @foreach($routineposts as $routine)
                                     {{$routine->jobname}}
                                     @endforeach
@@ -105,7 +106,6 @@
                             <textarea class="form-control" name="next" rows="3">{{Auth::user()->nextday>date('Y-m-d') ? Auth::user()->next : ''}}</textarea>
                         </div>
                     </div>
-                    <!-- -->
                     <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">     
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="作成">

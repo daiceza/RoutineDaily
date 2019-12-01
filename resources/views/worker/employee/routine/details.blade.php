@@ -51,7 +51,6 @@
                                 <option value="月1回" {{ $routine_form->important == '月1回' ? 'selected' : '' }}>月1回</option>
                                 <option value="ほぼやらない" {{ $routine_form->important == 'ほぼやらない' ? 'selected' : '' }}>ほぼやらない</option>
                             </select>
-                            <!-- <input type="text" class="form-control" name="important" value="{{$routine_form->important}}"> -->
                         </div>
                     </div>
                 </form>

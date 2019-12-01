@@ -61,10 +61,13 @@
                     <div class="form-group row">
                         <label class="col-md-2">仕事リスト</label>
                         <div class="col-md-10">
-                            <a>
-                                @foreach($routineposts as $routine)
-                                {{$routine->jobname}}
-                                @endforeach
+                            <a> @if(count($routineposts)>0)
+                                    @foreach($routineposts as $routine)
+                                    {{$routine->jobname}}
+                                    @endforeach
+                                @else
+                                仕事リストから仕事を登録しましょう。
+                                @endif
                             </a>
                         </div>
                     </div>
