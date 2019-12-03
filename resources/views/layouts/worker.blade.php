@@ -20,6 +20,12 @@
     </head>
     <body>
         <div id="app">
+        {{-- フラッシュメッセージ --}}
+        @if(session('message'))
+            <div class="alert alert-info text-center flash-message" style="">
+                {{ session('message') }}
+            </div>
+        @endif
         {{-- ナビゲーションバー--}}
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">

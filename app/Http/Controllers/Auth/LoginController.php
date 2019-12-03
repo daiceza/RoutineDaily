@@ -27,7 +27,11 @@ class LoginController extends Controller
      * @var string
      */
     //ログイン後、日報画面へ
-    protected $redirectTo ='/worker/daily';
+    //protected $redirectTo ='/worker/daily';
+    protected function redirectTo(){
+        session()->flash('message','ログインしました');
+        return '/worker/daily';
+    }
 
     /**
      * Create a new controller instance.
