@@ -5,6 +5,9 @@
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <h2>日報確認</h2>
+                @if(session('message'))
+                <div class="float-right">{{ session('message') }}</div>
+                @endif
                 <a href="{{action('Worker\DailyController@add')}}" role="button" class="btn btn-primary">日報作成</a>
             </div>
         </div>

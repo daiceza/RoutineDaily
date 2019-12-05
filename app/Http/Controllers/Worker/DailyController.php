@@ -89,6 +89,6 @@ class DailyController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $user->fill($form)->save();
-        return redirect('worker/daily');
+        return redirect('worker/daily')->with('message', '予定を編集しました');
     }
 }

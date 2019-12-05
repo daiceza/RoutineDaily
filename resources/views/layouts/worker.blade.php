@@ -20,12 +20,6 @@
     </head>
     <body>
         <div id="app">
-        {{-- フラッシュメッセージ --}}
-        @if(session('message'))
-            <div class="alert alert-info text-center flash-message" style="">
-                {{ session('message') }}
-            </div>
-        @endif
         {{-- ナビゲーションバー--}}
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
@@ -94,6 +88,7 @@
         <!-- Scripts -->
         @push('scripts')
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="{{ secure_asset('js/worker.js') }}"></script>
         @endpush
         @stack('scripts')

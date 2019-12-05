@@ -5,6 +5,10 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>日報確認({{$username->name}})</h2>
+                {{-- フラッシュメッセージ --}}
+                @if(session('message'))
+                <div class="alert alert-info text-center flash-message">{{ session('message') }}</div>
+                @endif
             </div>
             <div class="col-md-4">
             </div>
