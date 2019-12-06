@@ -3,7 +3,7 @@
 
 ## 初期ログイン(seedを利用した場合)
 
-https://safe-depths-83996.herokuapp.com/ (11/20更新)
+https://safe-depths-83996.herokuapp.com/ (heroku 11/20更新)
 
 php artisan migrate:fresh --seedで管理者と従業員1,2を作成
 
@@ -75,6 +75,8 @@ php artisan migrate:fresh --seedで管理者と従業員1,2を作成
 - 主な仕事で仕事名を表示
 
 #### <font color="tomato">更新内容</font>
+
+12/6 フラッシュメッセージの作成(～を編集しました)
 
 12/1 日報作成時、すでに同じ日の日報が作成されている場合、上書きする。
 

@@ -38,7 +38,7 @@ class RoutineController extends Controller
         unset($form['_token']);
         $routine->fill($form)->save();
         
-        return redirect('worker/routine/');
+        return redirect('worker/routine/')->with('message', $request->jobname.'を作成しました');
     }
     public function edit(Request $request)
     {
@@ -57,13 +57,13 @@ class RoutineController extends Controller
         $routine_form =$request->all();
         unset($routine_form['_token']);
         $routine->fill($routine_form)->save();
-        return redirect('worker/routine/');
+        return redirect('worker/routine/')->with('message', $request->jobname.'を編集しました');
     }
     public function delete(Request $request)
     {
         //削除
         $routine = Routine::find($request->id);
         $routine->delete();
-        return redirect('worker/routine/');
+        return redirect('worker/routine/')->with('message', '削除しました');
     }
 }

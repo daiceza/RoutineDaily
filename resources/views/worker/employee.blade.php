@@ -23,6 +23,11 @@
                 </form>
             </div>
         </div>
+        @if(session('message'))
+        <div class="row">
+            <div class="float-left">{{ session('message') }}</div>
+        </div>
+        @endif
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="row">

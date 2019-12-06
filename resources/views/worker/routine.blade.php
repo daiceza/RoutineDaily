@@ -5,6 +5,9 @@
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <h2>仕事リスト</h2>
+                @if(session('message'))
+                <div class="float-right">{{ session('message') }}</div>
+                @endif
                 <a href="{{action('Worker\RoutineController@add')}}" role="button" class="btn btn-primary">新規作成</a>
             </div>
         </div>

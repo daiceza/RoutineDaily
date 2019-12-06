@@ -45,6 +45,14 @@ class EmployeeController extends Controller
         
         unset($user_form['_token']);
         $user->fill($user_form)->save();
-        return redirect('admin/employee/');
+        return redirect('admin/employee/')->with('message', $request->name.'を更新しました');
+    }
+    public function delete(Request $request)
+    {
+        //削除
+        $daily = Users::find($request->id);
+        $name =  Users::find($request->name);
+        $daily->delete();
+        return redirect('admin/employee/')->with('message', '削除しました');
     }
 }

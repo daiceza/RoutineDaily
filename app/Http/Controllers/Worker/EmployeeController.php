@@ -10,6 +10,7 @@ use RoutineDaily\Users;
 use RoutineDaily\Daily;
 use RoutineDaily\Routine;
 use Carbon\Carbon;
+use Auth;
 
 class EmployeeController extends Controller
 {
@@ -59,13 +60,13 @@ class EmployeeController extends Controller
     }
     public function update(Request $request)
     {
-        $this->validate($request,Users::$mailpass);
+        $this->validate($request,Users::$profileeditrules);
         $user = Auth::user();
         $user_form =$request->except('password_confirmation');
         //$user_form->password = bcrypt($request->get('new-password'));
         unset($user_form['_token']);
         $user->fill($user_form)->save();
         
-        return redirect('worker/employee/');
+        return redirect('worker/employee/')->with('message', $user->name.'を編集しました');
     }
 }

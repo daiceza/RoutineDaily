@@ -37,8 +37,10 @@ class DailyController extends Controller
         $dailyrep = Daily::where('users_id',Auth::id())->where('day',$request->day)->first();
         if(!empty($dailyrep)){
             $daily = Daily::find($dailyrep->id);
+            $message ='の日報を上書きしました';
         }else{
             $daily = new Daily;
+            $message ='の日報を作成しました';
         }
         $user =  Auth::user();
         $dailyform  =$request->except('nextday','next');
@@ -47,7 +49,7 @@ class DailyController extends Controller
         unset($userform['_token']);
         $user->fill($userform)->save();
         $daily->fill($dailyform)->save();
-        return redirect('worker/daily/');
+        return redirect('worker/daily/')->with('message', $request->day.$message);
     }
     
     public function edit(Request $request)
@@ -73,14 +75,15 @@ class DailyController extends Controller
         
         unset($daily_form['_token']);
         $daily->fill($daily_form)->save();
-        return redirect('worker/daily/');
+        return redirect('worker/daily/')->with('message', $request->day.'の日報を編集しました');
     }
     public function delete(Request $request)
     {
         //削除
         $daily = Daily::find($request->id);
+        $deleteday = Daily::find($request->day);
         $daily->delete();
-        return redirect('worker/daily');
+        return redirect('worker/daily')->with('message', $deleteday.'日報を削除しました');
     }
     public function next(Request $request)
     {
@@ -89,6 +92,6 @@ class DailyController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $user->fill($form)->save();
-        return redirect('worker/daily')->with('message', '予定を編集しました');
+        return redirect('worker/daily')->with('message', $request->nextday.'の予定を編集しました');
     }
 }

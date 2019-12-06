@@ -8,7 +8,7 @@
                 <div class="card-header">プロフィール確認</div>
 
                 <div class="card-body">
-                    <form action="{{ action('Admin\EmployeeController@update') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ action('Worker\EmployeeController@update') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <!-- 名前 -->
                         <div class="form-group row">
