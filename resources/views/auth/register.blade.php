@@ -43,7 +43,8 @@
                             <label for="employee" class="col-md-4 col-form-label text-md-right">{{ __('messages.employee') }}</label>
 
                             <div class="col-md-6">
-                                <input id="employee" type="text" class="form-control @error('employee') is-invalid @enderror" name="employee" value="{{ old('employee') }}" required autocomplete="employee">
+                                <input id="employee" type="text" class="form-control @error('employee') is-invalid @enderror" name="employee" value="{{ old('employee') }}" required autocomplete="employee"
+                                title='社員番号は数字4桁です'>
 
                                 @error('employee')
                                     <span class="invalid-feedback" role="alert">
