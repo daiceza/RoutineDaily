@@ -23,11 +23,14 @@ class DailyController extends Controller
     public function add(Request $request)
     {
         //日報作成画面へ
-        $routineposts =Routine::where('users_id',Auth::id())->get();
+        $routineposts =Routine::where('users_id',Auth::id())
+        ->orderByRaw(Routine::$importantsort)->get();
         //今日より前の日報を取得
         $latest=Daily::where('users_id',Auth::id())
         ->where('day', '<', date('Y-m-d'))->first();
-        return view('worker.daily.create',['routineposts'=>$routineposts,'latest'=>$latest]);
+        $template=Daily::$template;
+        return view('worker.daily.create',['routineposts'=>$routineposts,'latest'=>$latest,
+        'template'=>$template]);
     }
     public function create(Request $request)
     {
@@ -59,7 +62,8 @@ class DailyController extends Controller
         if(empty($daily)){
             abort(404);
         }
-        $routineposts =Routine::where('users_id',Auth::id())->get();
+        $routineposts =Routine::where('users_id',Auth::id())
+        ->orderByRaw(Routine::$importantsort)->get();
         //今日より前の日報を取得
         $latest=Daily::where('users_id',Auth::id())
         ->where('day', '<', date('Y-m-d'))->first();

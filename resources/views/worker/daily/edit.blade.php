@@ -53,10 +53,12 @@
                             <div class="col-md-4">
                             <textarea class="form-control" name="timetable" rows="9"  required>{{$daily_form->timetable}}</textarea>
                             </div>
+                        @if(!is_null($latest))
                         <label class="col-md-2">先日の仕事<br>{{ $latest->day}}</label>
                             <div class="col-md-4">
                             <textarea readonly class="form-control" rows="9">{{ $latest->timetable}}</textarea>
                             </div>
+                        @endif
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">仕事リスト</label>

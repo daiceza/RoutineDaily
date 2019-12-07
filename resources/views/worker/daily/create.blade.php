@@ -62,15 +62,7 @@
                         @else
                         <label class="col-md-2">仕事内容</label>
                             <div class="col-md-4">
-                            <textarea class="form-control" name="timetable" rows="9">9:00~10:00 掃除 15分 仕事A 3セット
-10:00~11:00 仕事A 4セット
-11:00~12:00 仕事A 4セット
-12:00~13:00 休憩
-13:00~14:00 仕事B 3セット
-14:00~15:00 仕事B 3セット
-15:00~16:00 仕事B 3セット
-16:00~17:00 仕事C 3セット
-17:00~18:00 仕事C 2セット 整理整頓 20分</textarea>
+                            <textarea class="form-control" name="timetable" rows="9">{{$template}}</textarea>
                             </div>
                         @endif
                     </div>
