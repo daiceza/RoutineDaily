@@ -24,8 +24,10 @@ class EmployeeController extends Controller
         }else{
             $posts = User::orderBy('employee','asc')->get();
         }
+        $teamlist =User::distinct()->select('team')->get();
         $routineposts=Routine::all();
-        return view('worker.employee',['posts'=>$posts,'routineposts'=>$routineposts]);
+        return view('worker.employee',['posts'=>$posts,'routineposts'=>$routineposts,
+        'teamlist'=>$teamlist,'my_team'=>$my_team]);
     }
     public function daily(Request $request)
     {

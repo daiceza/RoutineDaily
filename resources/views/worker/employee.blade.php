@@ -3,18 +3,22 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-4 mx-auto">
+            <div class="col-md-8 mx-auto">
                 <h2>従業員リスト</h2>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <form action="{{action('Worker\EmployeeController@employee')}}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">所属</label>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" name="my_team" value="{{Auth::user()->team}}"
-                            title="所属を検索します、空欄で全員を表示します"/>
+                        <label class="col-md-4">所属</label>
+                        <div class="col-md-4">
+                            <select name="my_team">
+                                @foreach($teamlist as $teamlist)
+                                <option value="{{$teamlist->team}}" {{$my_team == $teamlist->team ? 'selected' : ''}}>{{$teamlist->team}}</option>
+                                @endforeach
+                                <option value=""{{$my_team == '' ? 'selected' : ''}}>全員</option>
+                            </select>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-primary" value="所属検索"/>
                         </div>

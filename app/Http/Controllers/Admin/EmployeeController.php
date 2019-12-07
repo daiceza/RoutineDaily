@@ -20,7 +20,9 @@ class EmployeeController extends Controller
             //従業員番号でソート
             $posts = Users::orderBy('employee','asc')->get();
         }
-        return view('admin.employee',['posts'=>$posts]);
+        $teamlist =Users::distinct()->select('team')->get();
+        return view('admin.employee',['posts'=>$posts,'my_team'=>$my_team,
+        'teamlist'=>$teamlist]);
     }
     public function add(Request $request)
     {
