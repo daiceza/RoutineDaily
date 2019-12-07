@@ -41,7 +41,7 @@ class EmployeeController extends Controller
     {
         //仕事詳細
         $username =User::find($request->id);
-        $posts =Routine::where('users_id',$request->id)->get();
+        $posts =Routine::where('users_id',$request->id)->orderByRaw(Routine::$importantsort)->get();
         return view('worker.employee.routine',['posts'=>$posts,'username'=>$username]);
     }
     public function details(Request $request)

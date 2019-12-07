@@ -29,7 +29,7 @@
                         </div>
                         <label class="col-md-2">目安時間</label>
                         <div class="col-md-4">
-                            <select name="important">
+                            <select name="settime">
                                 <option value="5分" {{ (empty($routine_form)) ? '' : $routine_form->settime == '5分' ? 'selected' : ''}}>5分</option>
                                 <option value="10分" {{ (empty($routine_form)) ? '' :$routine_form->settime == '10分' ? 'selected' : '' }}>10分</option>
                                 <option value="15分" {{ (empty($routine_form)) ? 'selected' :$routine_form->settime == '15分' ? 'selected' : '' }}>15分</option>

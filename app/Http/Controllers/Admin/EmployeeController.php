@@ -24,11 +24,6 @@ class EmployeeController extends Controller
         return view('admin.employee',['posts'=>$posts,'my_team'=>$my_team,
         'teamlist'=>$teamlist]);
     }
-    public function add(Request $request)
-    {
-        //registerがあるので未実装
-        return view('admin.employee.create');
-    }
     public function edit(Request $request)
     {
         //編集
@@ -52,9 +47,8 @@ class EmployeeController extends Controller
     public function delete(Request $request)
     {
         //削除
-        $daily = Users::find($request->id);
-        $name =  Users::find($request->name);
-        $daily->delete();
+        $user = Users::find($request->id);
+        $user->delete();
         return redirect('admin/employee/')->with('message', '削除しました');
     }
 }

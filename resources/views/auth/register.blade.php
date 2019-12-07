@@ -59,8 +59,16 @@
                             <label for="team" class="col-md-4 col-form-label text-md-right">{{ __('messages.team') }}</label>
 
                             <div class="col-md-6">
-                                <input id="team" type="text" class="form-control @error('team') is-invalid @enderror" name="team" value="{{ old('team') }}" required autocomplete="team">
-
+                                <input id="team" type="text" class="form-control @error('team') is-invalid @enderror" 
+                                name="team" value="{{ old('team') }}" required autocomplete="team" list="teamlist"
+                                title='プルダウンに所属がない場合、テキスト入力で作成できます'>
+                                @if(!empty($teamlist))
+                                <datalist id="teamlist">
+                                    @foreach($teamlist as $teamlist)
+                                    <option value="{{$teamlist->team}}"></option>
+                                    @endforeach
+                                </datalist>
+                                @endif
                                 @error('team')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

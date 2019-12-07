@@ -76,6 +76,10 @@ php artisan migrate:fresh --seedで管理者と従業員1,2を作成
 
 #### <font color="tomato">更新内容</font>
 
+12/8 新規登録ですでにある所属をdatalistにする
+
+重要度をControllerでソート
+
 12/7 所属検索をプルダウンメニューにする
 
 12/6 フラッシュメッセージの作成(～を編集しました)

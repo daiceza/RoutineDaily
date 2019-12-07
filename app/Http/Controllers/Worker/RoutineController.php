@@ -14,12 +14,12 @@ class RoutineController extends Controller
     public function routine(Request $request)
     {
         //自分の仕事
-        $myposts =Routine::where('users_id',Auth::id())->get();
+        $myposts =Routine::where('users_id',Auth::id())
+        ->orderByRaw(Routine::$importantsort)->get();
         //他従業員の仕事
         $otherposts =Routine::where('users_id',"!=",Auth::id())
-        ->join('users','users.id','=','routine.users_id')
-        ->get();
-        
+        ->orderByRaw(Routine::$importantsort)->orderBy('employee','asc')
+        ->join('users','users.id','=','routine.users_id')->get();
         return view('worker.routine',
         ['myposts'=>$myposts,'otherposts'=>$otherposts]);
     }

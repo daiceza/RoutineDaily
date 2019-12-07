@@ -32,10 +32,6 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','can:admin']],function()
 //ユーザー登録
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
-/*Route::group(['middleware' => ['auth', 'can:admin']], function () {
-  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-  Route::post('register', 'Auth\RegisterController@register');
-});*/
 
 //ページ移動
 Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
