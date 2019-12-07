@@ -19,9 +19,10 @@ class EmployeeController extends Controller
     {
         //従業員リスト
         $my_team =$request->my_team;
-        if($my_team != ''){
+        if($my_team != '' and $my_team !='全員'){
             $posts = User::where('team',$my_team)->orderBy('employee','asc')->get();
         }else{
+            //従業員番号でソート
             $posts = User::orderBy('employee','asc')->get();
         }
         $teamlist =User::distinct()->select('team')->get();

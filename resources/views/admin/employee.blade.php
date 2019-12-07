@@ -13,9 +13,10 @@
                         <div class="col-md-4">
                             <select name="my_team">
                                 @foreach($teamlist as $teamlist)
-                                <option value="{{$teamlist->team}}" {{$my_team == $teamlist->team ? 'selected' : ''}}>{{$teamlist->team}}</option>
+                                <option value="{{$teamlist->team}}" {{$my_team == $teamlist->team ? 'selected' : $teamlist->team==Auth::user()->team ? 'selected' : '' }}>
+                                {{$teamlist->team}}</option>
                                 @endforeach
-                                <option value=""{{$my_team == '' ? 'selected' : ''}}>全員</option>
+                                <option value="全員"{{$my_team == '全員' ? 'selected' : ''}}>全員</option>
                             </select>
                         </div>
                         <div class="col-md-4">

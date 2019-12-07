@@ -14,7 +14,7 @@ class EmployeeController extends Controller
     {
         $my_team =$request->my_team;
         //所属検索
-        if($my_team != ''){
+        if($my_team != '' and $my_team !='全員'){
             $posts = Users::where('team',$my_team)->orderBy('employee','asc')->get();
         }else{
             //従業員番号でソート
