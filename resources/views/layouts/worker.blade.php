@@ -41,15 +41,19 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/worker/employee">従業員リスト</a>
                             </li>
+                            @can('admin')
+                            @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
+                            </li>
+                            @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/employee">従業員編集</a>
+                            </li>
+                            @endcan
                         </ul>
                         <!--右側-->
                         <ul class="navbar-nav ml-auto">
-                            @can('admin')
-                            <li class="nav-item">
-                                <a class="nav-link" href="/admin/employee"><b>管理者ページへ</b></a>
-                            </li>
-                            @endcan
-                            
                             @guest
                             <li><a class="nav-link" href="{{ route('login')}}">
                                 {{ __('messages.Login')}}</a></li>

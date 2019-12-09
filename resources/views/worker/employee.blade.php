@@ -39,11 +39,11 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th width="15%">名前</th>
+                                <th width="15%">名前 従業員番号</th>
                                 <th width="15%">所属</th>
                                 <th width="15%">入社年</th>
-                                <th width="35%">主な仕事</th>
-                                <th width="10%">詳細</th>
+                                <th width="30%">主な仕事</th>
+                                <th width="15%">詳細</th>
                             </tr>
                         </thead>
                         <tbody>

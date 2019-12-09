@@ -1,4 +1,4 @@
-@extends(Auth::check() ? 'layouts.admin':'layouts.app')
+@extends(Auth::check() ? 'layouts.worker':'layouts.app')
 @section('title','新規登録')
 @section('content')
 <div class="container">
