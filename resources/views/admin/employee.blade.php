@@ -39,17 +39,19 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th width="15%">名前 従業員番号</th>
-                                <th width="15%">所属</th>
+                                <th width="15%">名前</th>
+                                <th width="10%">番号</th>
+                                <th width="10%">所属</th>
                                 <th width="15%">入社年</th>
-                                <th width="30%">メールアドレス</th>
-                                <th width="15%">詳細</th>
+                                <th width="25%">メールアドレス</th>
+                                <th width="15%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $user)
                             <tr>
-                                <th>{{$user->name}}<br>{{$user->employee}}</th>
+                                <th>{{$user->name}}</th>
+                                <td>{{$user->employee}}</td>
                                 <td>{{$user->team}}</td>
                                 <td>{{$user->join}}</td>
                                 <td>{{$user->email}}</td>
@@ -57,8 +59,6 @@
                                     <div>
                                         <a href="{{action('Admin\EmployeeController@edit',['id' => $user->id])}}"
                                         >編集</a>
-                                    </div>
-                                    <div>
                                         @if($user->id != Auth::id())
                                         <a href="{{action('Admin\EmployeeController@delete',['id' => $user->id])}}"
                                         onclick="return confirmDelete();">削除</a>

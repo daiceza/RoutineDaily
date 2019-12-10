@@ -39,17 +39,19 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th width="15%">名前 従業員番号</th>
-                                <th width="15%">所属</th>
+                                <th width="15%">名前</th>
+                                <th width="10%">番号</th>
+                                <th width="10%">所属</th>
                                 <th width="15%">入社年</th>
-                                <th width="30%">主な仕事</th>
+                                <th width="25%">主な仕事</th>
                                 <th width="15%">詳細</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $user)
                             <tr>
-                                <th>{{$user->name}}<br>{{$user->employee}}</th>
+                                <th>{{$user->name}}</th>
+                                <td>{{$user->employee}}</td>
                                 <td>{{$user->team}}</td>
                                 <td>{{$user->join}}</td>
                                 <td>
@@ -62,8 +64,6 @@
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\EmployeeController@daily',['id'=>$user->id])}}">日報</a>
-                                    </div>
-                                    <div>
                                         <a href="{{action('Worker\EmployeeController@routine',['id'=>$user->id])}}">仕事</a>
                                     </div>
                                 </td>

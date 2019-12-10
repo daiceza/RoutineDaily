@@ -44,7 +44,7 @@ Route::group(['prefix' => 'worker','middleware'=>'auth'],function(){
     Route::post('routine/create','Worker\RoutineController@create');
     Route::get('routine/edit','Worker\RoutineController@edit');
     Route::post('routine/edit','Worker\RoutineController@update');
-    Route::post('routine/delete','Worker\RoutineController@delete');
+    Route::get('routine/delete','Worker\RoutineController@delete');
     //日報編集
     Route::get('daily/create','Worker\DailyController@add');
     Route::post('daily/create','Worker\DailyController@create');
