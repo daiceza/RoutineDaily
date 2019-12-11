@@ -15,4 +15,8 @@ class Controller extends BaseController
     {
         return $request->user();
     }
+    public function welcome()
+    {
+        return view('welcome');
+    }
 }

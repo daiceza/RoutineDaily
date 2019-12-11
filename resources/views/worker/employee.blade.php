@@ -56,7 +56,7 @@
                                 <td>{{$user->join}}</td>
                                 <td>
                                     @foreach($routineposts as $routine)
-                                    @if($user->id ==$routine->users_id)
+                                    @if($user->id ==$routine->users_id && ($routine->important =="毎日" || $routine->important == "週2~3回"))
                                     {{$routine->jobname}}
                                     @endif
                                     @endforeach
