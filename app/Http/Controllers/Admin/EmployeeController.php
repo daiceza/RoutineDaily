@@ -51,4 +51,8 @@ class EmployeeController extends Controller
         $user->delete();
         return redirect('admin/employee/')->with('message', '削除しました');
     }
+    public function __construct()
+    {
+        $this->middleware(['auth','can:admin']);
+    }
 }

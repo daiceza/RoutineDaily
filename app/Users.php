@@ -17,9 +17,10 @@ class Users extends Model
         'password' => 'required',
         );
     public static $profileeditrules =array(
-        'name' => 'required',
-        'email' => 'required',
-        'employee' => 'required|digits:4',
+        'name' => ['required', 'string', 'max:100'],
+        'email' => ['required', 'string', 'email', 'max:255'],
+        'employee'=>['required','numeric','digits:4'],
+        //'password' => ['required', 'string', 'min:4', 'confirmed'],
         'team' => 'required',
         'join' => 'required',
         );

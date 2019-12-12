@@ -18,8 +18,9 @@ class RoutineController extends Controller
         ->orderByRaw(Routine::$importantsort)->get();
         //他従業員の仕事
         $otherposts =Routine::where('users_id',"!=",Auth::id())
-        ->orderByRaw(Routine::$importantsort)->orderBy('employee','asc')
-        ->join('users','users.id','=','routine.users_id')->get();
+        ->orderByRaw(Routine::$importantsort)->get();
+        //->join('routine','users_id','=','users.id')->get();
+        //->join('users','users.id','=','routine.users_id')->get();
         return view('worker.routine',
         ['myposts'=>$myposts,'otherposts'=>$otherposts]);
     }
@@ -65,5 +66,9 @@ class RoutineController extends Controller
         $routine = Routine::find($request->id);
         $routine->delete();
         return redirect('worker/routine/')->with('message', '削除しました');
+    }
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }

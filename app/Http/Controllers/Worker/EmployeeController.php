@@ -65,11 +65,15 @@ class EmployeeController extends Controller
     {
         $this->validate($request,Users::$profileeditrules);
         $user = Auth::user();
-        $user_form =$request->except('password_confirmation');
-        //$user_form->password = bcrypt($request->get('new-password'));
+        $user_form =$request->all();
+        //$user->password = bcrypt($request->get('password'));
         unset($user_form['_token']);
         $user->fill($user_form)->save();
         
         return redirect('worker/employee/')->with('message', $user->name.'を編集しました');
+    }
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }

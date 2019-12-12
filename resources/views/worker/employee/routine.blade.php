@@ -26,7 +26,11 @@
                                 <th>{{ \Str::limit($routine->jobname, 100) }}</th>
                                 <td>{{ \Str::limit($routine->settime, 200) }}</td>
                                 <td>{{ \Str::limit($routine->content, 100) }}</td>
+                                @if($routine->important == "毎日" || $routine->important == "週2~3回")
+                                <th><font color="blue">{{ \Str::limit($routine->important, 200) }}</font></th>
+                                @else
                                 <td>{{ \Str::limit($routine->important, 200) }}</td>
+                                @endif
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\EmployeeController@details',['id'=> $routine->id])}}">詳細</a>

@@ -98,4 +98,8 @@ class DailyController extends Controller
         $user->fill($form)->save();
         return redirect('worker/daily')->with('message', $request->nextday.'の予定を編集しました');
     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

@@ -26,19 +26,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($myposts as $routine)
+                            @foreach($myposts as $myroutine)
                             <tr>
-                                <th>{{$routine->jobname }}</th>
-                                <td>{{$routine->set.$routine->settime }}</td>
-                                <td>{{$routine->content }}</td>
-                                <td>{{$routine->important}}</td>
+                                <th>{{$myroutine->jobname }}</th>
+                                <td>{{$myroutine->set.$myroutine->settime }}</td>
+                                <td>{{$myroutine->content }}</td>
+                                @if($myroutine->important == "毎日" || $myroutine->important == "週2~3回")
+                                <th><font color="blue">{{$myroutine->important}}</font></th>
+                                @else
+                                <td>{{$myroutine->important}}</td>
+                                @endif
                                 <td>
                                     <div>
-                                        <a href="{{action('Worker\RoutineController@edit',['id' => $routine->id])}}"
+                                        <a href="{{action('Worker\RoutineController@edit',['id' => $myroutine->id])}}"
                                         >編集</a>
                                     </div>
                                     <div><!--onClick="return confirm('削除しますか?')"で確認する、JavaScriptを読み込みたい-->
-                                        <a href="{{action('Worker\RoutineController@delete',['id' => $routine->id])}}"
+                                        <a href="{{action('Worker\RoutineController@delete',['id' => $myroutine->id])}}"
                                          onclick="return confirmDelete();">削除</a>
                                     </div>
                                 </td>
@@ -64,21 +68,25 @@
                                 <th width="15%">目安時間</th>
                                 <th width="25%">内容</th>
                                 <th width="10%">重要度</th>
-                                <th width="10%">従業員名</th>
+                                <th width="10%"></th>
                                 <th width="10%">コピー</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($otherposts as $routine)
+                            @foreach($otherposts as $otherroutine)
                             <tr>
-                                <th>{{$routine->jobname}}</th>
-                                <td>{{$routine->set.$routine->settime}}</td>
-                                <td>{{$routine->content}}</td>
-                                <td>{{$routine->important}}</td>
+                                <th>{{$otherroutine->jobname}}</th>
+                                <td>{{$otherroutine->set.$otherroutine->settime}}</td>
+                                <td>{{$otherroutine->content}}</td>
+                                @if($otherroutine->important == "毎日" || $otherroutine->important == "週2~3回")
+                                <th><font color="blue">{{$otherroutine->important}}</font></th>
+                                @else
+                                <td>{{$otherroutine->important}}</td>
+                                @endif
                                 <!--users.tableからnameをつなげる-->
-                                <td>{{$routine->name}}</td>
+                                <td>{{$otherroutine->name}}</td>
                                 <td>
-                                    <a href="{{action('Worker\RoutineController@add',['id' => $routine->id])}}">コピー</a>
+                                    <a href="{{action('Worker\RoutineController@add',['id' => $otherroutine->id])}}">コピー</a>
                                 </td>
                             </tr>
                             @endforeach
