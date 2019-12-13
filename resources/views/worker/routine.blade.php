@@ -68,7 +68,7 @@
                                 <th width="15%">目安時間</th>
                                 <th width="25%">内容</th>
                                 <th width="10%">重要度</th>
-                                <th width="10%"></th>
+                                <th width="10%">従業員名</th>
                                 <th width="10%">コピー</th>
                             </tr>
                         </thead>
@@ -83,8 +83,11 @@
                                 @else
                                 <td>{{$otherroutine->important}}</td>
                                 @endif
-                                <!--users.tableからnameをつなげる-->
-                                <td>{{$otherroutine->name}}</td>
+                                @foreach($userposts as $user)
+                                    @if($user->id ==$otherroutine->users_id)
+                                    <td>{{$user->name}}</td>
+                                    @endif
+                                @endforeach
                                 <td>
                                     <a href="{{action('Worker\RoutineController@add',['id' => $otherroutine->id])}}">コピー</a>
                                 </td>
