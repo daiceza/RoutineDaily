@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use RoutineDaily\Http\Controllers\Controller;
 
 use RoutineDaily\Routine;
-use RoutineDaily\Users;
+use RoutineDaily\User;
 use Auth;
 class RoutineController extends Controller
 {
@@ -19,11 +19,10 @@ class RoutineController extends Controller
         //他従業員の仕事
         $otherposts =Routine::where('users_id',"!=",Auth::id())
         ->orderByRaw(Routine::$importantsort)->get();
-        
         /*->orderByRaw(Routine::$importantsort)->orderBy('employee','asc')
         ->join('users','users.id','=','routine.users_id')->get();*/
         
-        $userposts=Users::all();
+        $userposts=User::all();
         return view('worker.routine',
         ['myposts'=>$myposts,'otherposts'=>$otherposts,'userposts'=>$userposts]);
     }

@@ -10,9 +10,11 @@ class Routine extends Model
     protected $table = 'routine';
     public static $rules = array(
         'users_id'=> 'required',
-        'jobname' => 'required',
-        'settime' => 'required',
-        'content' => 'required',
+        'jobname' => ['required', 'string', 'max:50'],
+        'set' => ['max:10'],
+        'settime' => ['required'],
+        'content' => ['required','max:255'],
+        'manual' => ['max:255'],
     );
     //重要度のソート
     public static $importantsort ="case
@@ -21,8 +23,8 @@ class Routine extends Model
         when important = '週1回' then 3
         when important = '月1回' then 4
         else 9999 end";
-    public function users()
+    public function user()
     {
-        return $this->belongsTo('RoutineDaily\Users','foreign_key');
+        return $this->belongsTo('RoutineDaily\User','users_id');
     }
 }

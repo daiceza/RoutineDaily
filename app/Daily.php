@@ -15,7 +15,9 @@ class Daily extends Model
         'day' => 'required',
         'jobstart' => 'required',
         'jobend' => 'required',
-        'timetable' => 'required',
+        'timetable' => ['required','string', 'max:255'],
+        'impress' => ['max:255'],
+        'next' => ['max:255'],
     );
     public static $template=
     "9:00~10:00 掃除 15分 仕事A 3セット

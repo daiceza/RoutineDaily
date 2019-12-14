@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use RoutineDaily\Http\Controllers\Controller;
 
 use RoutineDaily\User;
-use RoutineDaily\Users;
 use RoutineDaily\Daily;
 use RoutineDaily\Routine;
 use Carbon\Carbon;
@@ -63,7 +62,7 @@ class EmployeeController extends Controller
     }
     public function update(Request $request)
     {
-        $this->validate($request,Users::$profileeditrules);
+        $this->validate($request,User::$profileeditrules);
         $user = Auth::user();
         $user_form =$request->all();
         //$user->password = bcrypt($request->get('password'));

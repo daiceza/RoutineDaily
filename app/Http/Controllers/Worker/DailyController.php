@@ -7,7 +7,7 @@ use RoutineDaily\Http\Controllers\Controller;
 
 use RoutineDaily\Routine;
 use RoutineDaily\Daily;
-use RoutineDaily\Users;
+use RoutineDaily\User;
 use Auth;
 
 class DailyController extends Controller
@@ -92,7 +92,8 @@ class DailyController extends Controller
     public function next(Request $request)
     {
         //予定編集
-        $user = Users::find($request->id);
+        $this->validate($request, User::$nextrules);
+        $user = User::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $user->fill($form)->save();

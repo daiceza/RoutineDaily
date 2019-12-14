@@ -30,7 +30,7 @@
                             <tr>
                                 <th>{{$myroutine->jobname }}</th>
                                 <td>{{$myroutine->set.$myroutine->settime }}</td>
-                                <td>{{$myroutine->content }}</td>
+                                <td>{{ \Str::limit($myroutine->content, 80) }}</td>
                                 @if($myroutine->important == "毎日" || $myroutine->important == "週2~3回")
                                 <th><font color="blue">{{$myroutine->important}}</font></th>
                                 @else
@@ -77,17 +77,13 @@
                             <tr>
                                 <th>{{$otherroutine->jobname}}</th>
                                 <td>{{$otherroutine->set.$otherroutine->settime}}</td>
-                                <td>{{$otherroutine->content}}</td>
+                                <td>{{ \Str::limit($otherroutine->content, 50) }}</td>
                                 @if($otherroutine->important == "毎日" || $otherroutine->important == "週2~3回")
                                 <th><font color="blue">{{$otherroutine->important}}</font></th>
                                 @else
                                 <td>{{$otherroutine->important}}</td>
                                 @endif
-                                @foreach($userposts as $user)
-                                    @if($user->id ==$otherroutine->users_id)
-                                    <td>{{$user->name}}</td>
-                                    @endif
-                                @endforeach
+                                <td>{{$otherroutine->user->name}}</td>
                                 <td>
                                     <a href="{{action('Worker\RoutineController@add',['id' => $otherroutine->id])}}">コピー</a>
                                 </td>

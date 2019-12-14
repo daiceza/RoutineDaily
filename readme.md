@@ -76,9 +76,11 @@ php artisan migrate:fresh --seedで管理者と従業員1,2を作成
 
 #### <font color="tomato">更新内容</font>
 
-12/13 routes/webのクロージャを無くす
+12/14 リレーショナルデータベースを活用
 
-join('users','users.id','=','routine.users_id')はidが一致しないため無し
+バリデーションの設定(入力文字が多すぎることを防ぐ)
+
+12/13 routes/webのクロージャを無くす
 
 12/8 新規登録ですでにある所属をdatalistにする
 

@@ -55,12 +55,11 @@
                                 <td>{{$user->team}}</td>
                                 <td>{{$user->join}}</td>
                                 <td>
-                                    @foreach($routineposts as $routine)
-                                    @if($user->id ==$routine->users_id && ($routine->important =="毎日" || $routine->important == "週2~3回"))
+                                    @foreach($user->routine as $routine)
+                                    @if($routine->important =="毎日" || $routine->important == "週2~3回")
                                     {{$routine->jobname}}
                                     @endif
                                     @endforeach
-                                </td>
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\EmployeeController@daily',['id'=>$user->id])}}">日報</a>
