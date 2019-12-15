@@ -74,12 +74,21 @@
                                     @elseif($daily->day==date('Y-m-d'))
                                     <font size="+1">{{$daily->day}}
                                     <br><font color="green">(今日)</font></font>
+                                    @elseif(!is_null($latest)&& ($latest->day==$daily->day))
+                                    <font size="+1">{{$daily->day}}
+                                    <br><font color="blue">(先日)</font></font>
                                     @else
                                     {{$daily->day}}
                                     @endif
                                 </th>
-                                <td><textarea readonly class="form-control" rows="9">{{$daily->timetable}}</textarea></td>
-                                <td><textarea readonly class="form-control" rows="9">{{$daily->impress}}</textarea></td>
+                                <td><textarea readonly class="form-control"
+                                rows="{{substr_count($daily->timetable,"\n")>=substr_count($daily->impress,"\n")?
+                                substr_count($daily->timetable,"\n")+1:substr_count($daily->impress,"\n")+1}}"
+                                >{{$daily->timetable}}</textarea></td>
+                                <td><textarea readonly class="form-control"
+                                rows="{{substr_count($daily->timetable,"\n")>=substr_count($daily->impress,"\n")?
+                                substr_count($daily->timetable,"\n")+1:substr_count($daily->impress,"\n")+1}}"
+                                >{{$daily->impress}}</textarea></td>
                                 <td>
                                     <div>
                                         <a href="{{action('Worker\DailyController@edit',['id' => $daily->id])}}">編集</a>

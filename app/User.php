@@ -56,9 +56,10 @@ class User extends Authenticatable
         'name' => ['required', 'string', 'max:100'],
         'email' => ['required', 'string', 'email', 'max:255'],
         'employee'=>['required','numeric','digits:4'],
-        //'password' => ['required', 'string', 'min:4', 'confirmed'],
         'team' => 'required',
         'join' => 'required',
+        'password' => ['required', 'string','min:4', 'confirmed'],
+        //'current_password'=>['required', 'string','min:4', 'password:Auth::user()->password'],
         );
     public function daily()
     {

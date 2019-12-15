@@ -83,10 +83,10 @@
                             </div>
                         </div>
                         
-                        <!-- 旧パスワード 
+                        <!-- 現在のパスワード --
                         <div class="form-group row">
-                        <label for="password" class="col-md-3 col-form-label">現在のパスワード</label>
-                            <div class="col-md-9">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">現在のパスワード</label>
+                            <div class="col-md-6">
                                 <input id="current" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" required>
                                 @error('current_password')
                                 <span class="invalid-feedback" role="alert">
@@ -95,12 +95,12 @@
                                 @enderror
                             </div>
                         </div>-->
-                        <!-- パスワード 
+                        <!-- パスワード -->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">パスワード変更</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -109,16 +109,14 @@
                                 @enderror
                             </div>
                         </div>
-                         -->
-                        <!-- パスワード 再入力 
+                        <!-- パスワード 再入力 -->
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
-                         -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <input type="hidden" name="id" value="{{ $user_form->id}}">

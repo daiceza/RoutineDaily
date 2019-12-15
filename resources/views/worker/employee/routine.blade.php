@@ -23,13 +23,13 @@
                         <tbody>
                             @foreach($posts as $routine)
                             <tr>
-                                <th>{{ \Str::limit($routine->jobname, 100) }}</th>
-                                <td>{{ \Str::limit($routine->settime, 200) }}</td>
-                                <td>{{ \Str::limit($routine->content, 100) }}</td>
+                                <th>{{$routine->jobname}}</th>
+                                <td>{{$routine->set.$routine->settime }}</td>
+                                <td>{{ \Str::limit($routine->content, 80) }}</td>
                                 @if($routine->important == "毎日" || $routine->important == "週2~3回")
-                                <th><font color="blue">{{ \Str::limit($routine->important, 200) }}</font></th>
+                                <th><font color="blue">{{$routine->important}}</font></th>
                                 @else
-                                <td>{{ \Str::limit($routine->important, 200) }}</td>
+                                <td>{{$routine->important}}</td>
                                 @endif
                                 <td>
                                     <div>

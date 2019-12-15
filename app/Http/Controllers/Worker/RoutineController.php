@@ -19,12 +19,7 @@ class RoutineController extends Controller
         //他従業員の仕事
         $otherposts =Routine::where('users_id',"!=",Auth::id())
         ->orderByRaw(Routine::$importantsort)->get();
-        /*->orderByRaw(Routine::$importantsort)->orderBy('employee','asc')
-        ->join('users','users.id','=','routine.users_id')->get();*/
-        
-        $userposts=User::all();
-        return view('worker.routine',
-        ['myposts'=>$myposts,'otherposts'=>$otherposts,'userposts'=>$userposts]);
+        return view('worker.routine',['myposts'=>$myposts,'otherposts'=>$otherposts]);
     }
     public function add(Request $request)
     {

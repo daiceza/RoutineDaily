@@ -10,6 +10,7 @@ use RoutineDaily\Daily;
 use RoutineDaily\Routine;
 use Carbon\Carbon;
 use Auth;
+use Hash;
 
 class EmployeeController extends Controller
 {
@@ -34,7 +35,8 @@ class EmployeeController extends Controller
         //日報詳細
         $username =User::find($request->id);
         $posts =Daily::where('users_id',$request->id)->orderBy('day', 'desc')->paginate(5);
-        return view('worker.employee.daily',['posts'=>$posts,'username'=>$username]);
+        $latest=Daily::where('users_id',$request->id)->where('day', '<', date('Y-m-d'))->first();
+        return view('worker.employee.daily',['posts'=>$posts,'username'=>$username,'latest'=>$latest]);
     }
     public function routine(Request $request)
     {
@@ -65,7 +67,8 @@ class EmployeeController extends Controller
         $this->validate($request,User::$profileeditrules);
         $user = Auth::user();
         $user_form =$request->all();
-        //$user->password = bcrypt($request->get('password'));
+        //$passcheck=Hash::check($user_form['current_password'], $user->password);
+        $user_form['password'] =Hash::make($request->password);
         unset($user_form['_token']);
         $user->fill($user_form)->save();
         

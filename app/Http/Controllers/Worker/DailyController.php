@@ -18,7 +18,10 @@ class DailyController extends Controller
         //日報確認
         $posts =Daily::where('users_id',Auth::id())
         ->orderBy('day', 'desc')->paginate(5);
-        return view('worker.daily',['posts'=>$posts]);
+        //今日より前の日報を取得
+        $latest=Daily::where('users_id',Auth::id())
+        ->where('day', '<', date('Y-m-d'))->first();
+        return view('worker.daily',['posts'=>$posts,'latest'=>$latest]);
     }
     public function add(Request $request)
     {
