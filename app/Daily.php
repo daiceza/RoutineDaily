@@ -29,4 +29,9 @@ class Daily extends Model
 15:00~16:00 仕事B 3セット
 16:00~17:00 仕事C 3セット
 17:00~18:00 仕事C 2セット 整理整頓 20分";
+    public function user()
+    {
+        return $this->belongsTo('RoutineDaily\User','users_id');
+    }
 }
+

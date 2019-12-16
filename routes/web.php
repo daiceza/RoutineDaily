@@ -41,6 +41,8 @@ Route::get('worker/daily/edit','Worker\DailyController@edit');
 Route::post('worker/daily/edit','Worker\DailyController@update');
 Route::get('worker/daily/delete','Worker\DailyController@delete');
 Route::post('worker/daily','Worker\DailyController@next');
+//日報リスト
+Route::get('worker/dailylist','Worker\DailyController@list');
 //従業員リスト
 Route::get('worker/employee/daily','Worker\EmployeeController@daily');
 Route::get('worker/employee/routine','Worker\EmployeeController@routine');

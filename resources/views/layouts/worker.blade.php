@@ -36,6 +36,9 @@
                                 <a class="nav-link" href="/worker/daily">日報確認</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="/worker/dailylist">日報リスト</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/worker/routine">仕事リスト</a>
                             </li>
                             <li class="nav-item">

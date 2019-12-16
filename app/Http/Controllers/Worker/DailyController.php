@@ -102,6 +102,12 @@ class DailyController extends Controller
         $user->fill($form)->save();
         return redirect('worker/daily')->with('message', $request->nextday.'の予定を編集しました');
     }
+    public function list(Request $request)
+    {
+        $dailylist=Daily::where('day', '<=', date('Y-m-d'))->orderBy('users_id', 'asc')
+        ->orderBy('day', 'desc')->paginate(10);
+        return view('worker.dailylist',['dailylist'=>$dailylist]);
+    }
     public function __construct()
     {
         $this->middleware('auth');
