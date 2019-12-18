@@ -110,7 +110,7 @@ return [
         'array' => 'The :attribute must contain :size items.',
     ],
     'starts_with' => 'The :attribute must start with one of the following: :values',
-    'string' => 'The :attribute must be a string.',
+    'string' => ':attribute を入力してください',
     'timezone' => 'The :attribute must be a valid zone.',
     'unique' => ':attribute はすでに使用されています',
     'uploaded' => 'The :attribute failed to upload.',

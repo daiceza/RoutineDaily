@@ -78,7 +78,6 @@
                                     @else
                                     {{$daily->day}}
                                     @endif
-                                    
                                 </th>
                                 <td><textarea readonly class="form-control"
                                 rows="{{substr_count($daily->timetable,"\n")>=substr_count($daily->impress,"\n")?

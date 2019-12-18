@@ -20,7 +20,7 @@ class DailyController extends Controller
         ->orderBy('day', 'desc')->paginate(5);
         //今日より前の日報を取得
         $latest=Daily::where('users_id',Auth::id())
-        ->where('day', '<', date('Y-m-d'))->first();
+        ->orderBy('day', 'desc')->where('day', '<', date('Y-m-d'))->first();
         return view('worker.daily',['posts'=>$posts,'latest'=>$latest]);
     }
     public function add(Request $request)
@@ -30,7 +30,7 @@ class DailyController extends Controller
         ->orderByRaw(Routine::$importantsort)->get();
         //今日より前の日報を取得
         $latest=Daily::where('users_id',Auth::id())
-        ->where('day', '<', date('Y-m-d'))->first();
+        ->orderBy('day', 'desc')->where('day', '<', date('Y-m-d'))->first();
         $template=Daily::$template;
         return view('worker.daily.create',['routineposts'=>$routineposts,'latest'=>$latest,
         'template'=>$template]);
@@ -69,7 +69,7 @@ class DailyController extends Controller
         ->orderByRaw(Routine::$importantsort)->get();
         //今日より前の日報を取得
         $latest=Daily::where('users_id',Auth::id())
-        ->where('day', '<', date('Y-m-d'))->first();
+        ->orderBy('day', 'desc')->where('day', '<', date('Y-m-d'))->first();
         return view('worker.daily.edit',['daily_form'=>$daily,
             'latest'=>$latest,'routineposts'=>$routineposts]);
     }
@@ -104,8 +104,9 @@ class DailyController extends Controller
     }
     public function list(Request $request)
     {
-        $dailylist=Daily::where('day', '<=', date('Y-m-d'))->orderBy('users_id', 'asc')
-        ->orderBy('day', 'desc')->paginate(10);
+        $dailylist=Daily::where('day', '<=', date('Y-m-d'))->orderBy('day', 'desc')
+        ->orderBy('users_id', 'asc')
+        ->paginate(10);
         return view('worker.dailylist',['dailylist'=>$dailylist]);
     }
     public function __construct()
