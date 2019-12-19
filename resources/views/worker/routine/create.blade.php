@@ -30,19 +30,19 @@
                         <label class="col-md-2">目安時間</label>
                         <div class="col-md-4">
                             <select name="settime">
-                                <option value="5分" {{ (empty($routine_form)) ? '' : $routine_form->settime == '5分' ? 'selected' : ''}}>5分</option>
-                                <option value="10分" {{ (empty($routine_form)) ? '' :$routine_form->settime == '10分' ? 'selected' : '' }}>10分</option>
-                                <option value="15分" {{ (empty($routine_form)) ? 'selected' :$routine_form->settime == '15分' ? 'selected' : '' }}>15分</option>
-                                <option value="20分" {{ (empty($routine_form)) ? '' :$routine_form->settime == '20分' ? 'selected' : '' }}>20分</option>
-                                <option value="25分" {{ (empty($routine_form)) ? '' : $routine_form->settime == '25分' ? 'selected' : ''}}>25分</option>
-                                <option value="30分" {{ (empty($routine_form)) ? '' :$routine_form->settime == '30分' ? 'selected' : '' }}>30分</option>
-                                <option value="35分" {{ (empty($routine_form)) ? '' : $routine_form->settime == '35分' ? 'selected' : ''}}>35分</option>
-                                <option value="40分" {{ (empty($routine_form)) ? '' :$routine_form->settime == '40分' ? 'selected' : '' }}>40分</option>
-                                <option value="45分" {{ (empty($routine_form)) ? '' : $routine_form->settime == '45分' ? 'selected' : ''}}>45分</option>
-                                <option value="50分" {{ (empty($routine_form)) ? '' :$routine_form->settime == '50分' ? 'selected' : '' }}>50分</option>
-                                <option value="55分" {{ (empty($routine_form)) ? '' : $routine_form->settime == '55分' ? 'selected' : ''}}>55分</option>
-                                <option value="60分" {{ (empty($routine_form)) ? '' :$routine_form->settime == '60分' ? 'selected' : '' }}>60分</option>
-                                <option value="規定時間まで" {{ (empty($routine_form)) ? '' :$routine_form->settime == '規定時間まで' ? 'selected' : '' }}>規定時間まで</option>
+                                <option value="5分" {{ (empty($routine_form)) ? '' : ($routine_form->settime == '5分' ? 'selected' : '')}}>5分</option>
+                                <option value="10分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '10分' ? 'selected' : '')}}>10分</option>
+                                <option value="15分" {{ (empty($routine_form)) ? 'selected' :($routine_form->settime == '15分' ? 'selected' : '') }}>15分</option>
+                                <option value="20分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '20分' ? 'selected' : '')}}>20分</option>
+                                <option value="25分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '25分' ? 'selected' : '')}}>25分</option>
+                                <option value="30分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '30分' ? 'selected' : '')}}>30分</option>
+                                <option value="35分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '35分' ? 'selected' : '')}}>35分</option>
+                                <option value="40分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '40分' ? 'selected' : '')}}>40分</option>
+                                <option value="45分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '45分' ? 'selected' : '')}}>45分</option>
+                                <option value="50分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '50分' ? 'selected' : '')}}>50分</option>
+                                <option value="55分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '55分' ? 'selected' : '')}}>55分</option>
+                                <option value="60分" {{ (empty($routine_form)) ? '' :($routine_form->settime == '60分' ? 'selected' : '')}}>60分</option>
+                                <option value="規定時間まで" {{ (empty($routine_form)) ? '' :($routine_form->settime == '規定時間まで' ? 'selected' : '')}}>規定時間まで</option>
                             </select>
                         </div>
                     </div>
