@@ -7,6 +7,9 @@
 
                     <div class="card-body">
                         I'm an example component.
+                        <ul>
+                            <li v-for="i in list">{{i}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -16,6 +19,9 @@
 
 <script>
     export default {
+        data:function(){
+            return{list:[1,2]};
+        },
         mounted() {
             console.log('Component mounted.')
         }

@@ -38,24 +38,4 @@ body {
 .login-body {
   background-color: rgba(0, 0, 0, 0.25);
 }
-@keyframes message{
-  0%{
-    opacity:1;
-    display: block;
-  }
-  99% {
-    opacity:0;
-    display: block;
-  }
-  100%{
-    opacity:0;
-    display: none;
-  }
-}
-.alert.alert-info.text-center.flash-message{
-  display: block;
-}
-.alert.alert-info.text-center.flash-message.message{
-  display: none;
-  animation:message 2s linear 0s 1;
-}
+

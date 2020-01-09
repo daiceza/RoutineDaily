@@ -35,7 +35,7 @@ class EmployeeController extends Controller
         //日報詳細
         $username =User::find($request->id);
         $posts =Daily::where('users_id',$request->id)->orderBy('day', 'desc')->paginate(5);
-        $latest=Daily::where('users_id',$request->id)->where('day', '<', date('Y-m-d'))->first();
+        $latest=Daily::where('users_id',$request->id)->orderBy('day', 'desc')->where('day', '<', date('Y-m-d'))->first();
         return view('worker.employee.daily',['posts'=>$posts,'username'=>$username,'latest'=>$latest]);
     }
     public function routine(Request $request)

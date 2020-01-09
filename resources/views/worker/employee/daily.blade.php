@@ -7,6 +7,7 @@
                 <h2>日報確認({{$username->name}})</h2>
                 {{-- フラッシュメッセージ --}}
                 @if(session('message'))
+                <message></message>
                 <div class="alert alert-info text-center flash-message">{{ session('message') }}</div>
                 @endif
             </div>
