@@ -33,16 +33,16 @@
                         <!--左側-->
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="/worker/daily">日報確認</a>
+                                <a class="nav-link daily" href="/worker/daily">日報確認</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/worker/dailylist">日報リスト</a>
+                                <a class="nav-link dailylist" href="/worker/dailylist">日報リスト</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/worker/routine">仕事リスト</a>
+                                <a class="nav-link routine" href="/worker/routine">仕事リスト</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/worker/employee">従業員リスト</a>
+                                <a class="nav-link worker" href="/worker/employee">従業員リスト</a>
                             </li>
                             @can('admin')
                             @if (Route::has('register'))
